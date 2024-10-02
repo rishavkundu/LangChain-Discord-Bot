@@ -1,90 +1,17 @@
+# bot.py
+
 import discord
 from discord.ext import commands
-import os
-import aiohttp
-from dotenv import load_dotenv
-import logging
-import json
 import re
-
-# Load environment variables from .env file
-load_dotenv()
-
-# Retrieve sensitive information from environment variables
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-# Initialize logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+import logging
+from config import system_prompt, DISCORD_TOKEN
+from api_client import fetch_completion_with_hermes
 
 # Initialize bot with all necessary intents
 intents = discord.Intents.default()
 intents.message_content = True  # Enable message content intent
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-def load_system_prompt():
-    """
-    Load the system prompt from a file named 'prompt.txt' in the root directory.
-    
-    Returns:
-        str: The content of the prompt file or a default prompt if the file is not found.
-    """
-    try:
-        with open('prompt.txt', 'r', encoding='utf-8') as file:
-            return file.read().strip()
-    except FileNotFoundError:
-        logging.error("prompt.txt file not found in the root directory.")
-        return "I am an AI assistant named Cleo."
-    except Exception as e:
-        logging.error(f"Error reading prompt.txt: {str(e)}")
-        return "I am an AI assistant named Cleo."
-
-# Load system prompt
-system_prompt = load_system_prompt()
-logging.info(f"Loaded system prompt: {system_prompt[:50]}...")  # Log the first 50 characters
-
-async def fetch_completion_with_hermes(user_prompt):
-    """
-    Fetch a completion from the OpenRouter API using the Hermes model.
-    
-    Args:
-        user_prompt (str): The user's input prompt.
-    
-    Returns:
-        str: The AI model's response or an error message.
-    """
-    try:
-        api_url = "https://openrouter.ai/api/v1/completions"
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {OPENAI_API_KEY}"
-        }
-        full_prompt = f"{system_prompt}\n\n{user_prompt}\n"
-        data = {
-            "model": "nousresearch/hermes-3-llama-3.1-405b:free",
-            "prompt": full_prompt,
-            "max_tokens": 150,
-            "temperature": 0.6,
-            "top_p": 1,
-            "stop": ["\nHuman:", "\n\nHuman:", "Assistant:"]  # Add stop sequences
-        }
-
-        logging.info(f"Sending request to OpenRouter: {json.dumps(data, indent=2)}")
-
-        async with aiohttp.ClientSession() as session:
-            async with session.post(api_url, headers=headers, json=data) as response:
-                logging.info(f"Received response status: {response.status}")
-                if response.status == 200:
-                    result = await response.json()
-                    logging.info(f"API Response: {json.dumps(result, indent=2)}")
-                    return result['choices'][0]['text'].strip()
-                else:
-                    error_text = await response.text()
-                    logging.error(f"API Error {response.status}: {error_text}")
-                    return f"API Error: {response.status}"
-    except Exception as e:
-        logging.error(f"Exception in API call: {str(e)}")
-        return f"Error: {str(e)}"
 
 @bot.event
 async def on_ready():
@@ -142,5 +69,3 @@ async def shutdown(ctx):
     await ctx.send("Shutting down...")
     await ctx.bot.close()
 
-if __name__ == "__main__":
-    bot.run(DISCORD_TOKEN)
