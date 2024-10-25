@@ -1,29 +1,11 @@
-# Discord Question Answering Bot
+# Cleo - Discord Bot for Nous Research Bots
 
-This bot is designed to answer questions in a Discord server by using advanced language models. The bot receives a question, retrieves relevant documents from a stored document set, and generates a suitable response using the OpenAI language model.
+Cleo is a Discord bot designed to facilitate interactions between users and Nous Research bots. She is creative, imaginative, engaging and helpful.
+She's guardrailed with standard safety guidelines to ensure she behaves as intended.
 
-## Setup
+## Features
 
-1. Clone the repository and navigate to its directory in your terminal.
-2. Install the required packages with `pip install -r requirements.txt`.
+- **Context Management**: Cleo maintains a context for each conversation, allowing for more accurate and relevant responses.
+- **Thread Support**: It can handle conversations within threads, providing a seamless experience for users.
+- **User-Friendly**: The bot is designed to be easy to use, with minimal friction for interactions.
 
-## Environment Variables
-
-Before starting the bot, make sure to set the following environment variables:
-
-- `DISCORD_TOKEN`: Your Discord bot token. You can get this from the [Discord Developer Portal](https://discord.com/developers/applications).
-- `OPENAI_API_KEY`: Your OpenAI API key. You can get it here [OpenAI Plattform](https://platform.openai.com/account/api-keys)
-
-## Starting the Bot
-
-To start the bot, simply run `python bot.py` in your terminal.
-
-## Usage
-
-After inviting the bot to your Discord server, you can ask it a question with the command `!question <your question here>`. For example:
-
-```
-!question What is the Python language?
-```
-
-The bot will process your question, retrieve relevant documents, and generate a suitable response using the OpenAI language model.
