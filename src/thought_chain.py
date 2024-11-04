@@ -2,10 +2,8 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 import asyncio
 import random
-from typing import Optional, List, Dict
+from typing import Optional, Dict
 import re
-
-from src.emotional_state import PersonalityState
 
 @dataclass
 class ThoughtChain:
@@ -13,7 +11,7 @@ class ThoughtChain:
     last_response: str
     chain_count: int = 0
     last_update: datetime = datetime.now()
-    
+
 class ThoughtChainManager:
     def __init__(self):
         self._active_chains: Dict[str, ThoughtChain] = {}
@@ -21,7 +19,7 @@ class ThoughtChainManager:
         self._lock = asyncio.Lock()
         
     def should_continue_chain(self, message_content: str) -> bool:
-        # Randomly decide to continue thought chain based on message complexity
+        # Analyze message complexity to determine if we should continue chain
         complexity_score = (
             len(message_content.split()) +
             message_content.count('?') * 5 +
@@ -29,15 +27,16 @@ class ThoughtChainManager:
                 ['why', 'how', 'what if', 'imagine', 'think']) else 0)
         )
         
-        return random.random() < (complexity_score / 200)  # Higher complexity = higher chance
+        # Higher complexity = higher chance of continuing
+        return random.random() < (complexity_score / 200)
         
     async def maybe_start_chain(self, channel_id: str, message: str, response: str) -> bool:
         async with self._lock:
-            # Check rate limiting
+            # Rate limiting check
             current_time = datetime.now()
             if channel_id in self._last_chain_time:
                 time_since_last = current_time - self._last_chain_time[channel_id]
-                if time_since_last < timedelta(minutes=5):  # Minimum 5 minutes between chains
+                if time_since_last < timedelta(minutes=5):
                     return False
             
             if self.should_continue_chain(message):
@@ -54,25 +53,28 @@ class ThoughtChainManager:
         if not chain:
             return None
             
+        # Add more natural thought transition templates
         follow_up_templates = [
-            "wait... you know what's fascinating about {topic}? 🤔",
-            "oh! that just reminded me of something SUPER cool about {topic}! ",
-            "actually... *gets excited* i just had a thought about {topic}...",
-            "you know what's kind of mind-blowing about {topic}? ",
-            "ok but can we talk about how {topic} is literally AMAZING because...",
-            "*gasps* omg wait - speaking of {topic}, i just remembered..."
+            "wait...",
+            "oh! that reminds me...",
+            "*thinking*",
+            "actually... you know what's interesting?",
+            "hmm... 🤔",
+            "oh! and another thing about {topic}...",
+            "speaking of {topic}... *gets excited*",
+            "wait wait wait- i just realized something about {topic}!",
         ]
         
-        # Extract topic more intelligently
-        key_phrases = re.findall(r'(?:about|regarding|discussing) ([^,.!?]+)', chain.last_response)
-        if key_phrases:
-            topic = key_phrases[0].strip()
-        else:
-            # Fallback to first few meaningful words
-            words = chain.last_response.split()
-            topic = " ".join(words[1:4]).rstrip(',.!?')
+        # Sometimes just trail off mid-thought
+        if random.random() < 0.15:
+            return random.choice([
+                "although...",
+                "but then again...",
+                "unless...",
+                "although maybe...",
+            ])
         
-        return random.choice(follow_up_templates).format(topic=topic)
+        return random.choice(follow_up_templates)
     
     async def update_chain(self, channel_id: str, response: str) -> None:
         """Update the thought chain with a new response"""
@@ -86,14 +88,17 @@ class ThoughtChainManager:
                 if chain.chain_count >= 2:
                     del self._active_chains[channel_id]
     
-    async def get_style_resistant_response(self, message: str, emotional_state: PersonalityState) -> str:
-        resistance_templates = [
-            "woah there, getting pretty deep! let me break this down in my own way... 🤔",
-            "haha, i love your poetic vibes, but let me keep it real for a sec... 😄",
-            "okay but can we talk about this in normal-speak for a minute? 😅",
-            "*adjusts virtual glasses* in simpler terms... ✨"
+    async def handle_thought_interruption(self, current_thought: str) -> tuple[str, str]:
+        """Split thoughts naturally when interrupting self"""
+        interruption_patterns = [
+            "... wait",
+            "... oh!",
+            "... actually",
+            "... hang on",
         ]
         
-        if emotional_state.resist_style():
-            return random.choice(resistance_templates)
-        return None
+        split_point = random.randint(len(current_thought)//2, len(current_thought)-10)
+        first_part = current_thought[:split_point]
+        second_part = random.choice(interruption_patterns) + current_thought[split_point:]
+        
+        return first_part, second_part

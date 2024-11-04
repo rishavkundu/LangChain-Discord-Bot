@@ -233,10 +233,10 @@ async def fetch_completion_with_hermes(
                         "messages": messages,
                         "max_tokens": final_max_tokens,
                         "temperature": temperature,
-                        "top_p": top_p,
-                        "frequency_penalty": frequency_penalty,
+                        "top_p": 0.9,
+                        "frequency_penalty": 0.8,
                         "repetition_penalty": 1.15,
-                        "presence_penalty": presence_penalty,
+                        "presence_penalty": 0.6,
                         "stop": ["<end>", "\n\n"],
                         "suffix": "<end>"
                     }
@@ -245,21 +245,30 @@ async def fetch_completion_with_hermes(
             
             if response.status == 200:
                 result = await response.json()
-                ai_response = result['choices'][0]['message']['content'].strip()
+                if 'choices' in result and len(result['choices']) > 0:
+                    ai_response = result['choices'][0]['message']['content'].strip()
+                    
+                    # Validate response has proper spacing
+                    if len(ai_response) > 0:
+                        # Apply comprehensive spacing fixes
+                        ai_response = fix_spacing(ai_response)
+                        
+                        # Verify minimum spacing ratio (as a safety check)
+                        space_ratio = ai_response.count(' ') / len(ai_response)
+                        if space_ratio < 0.1:  # Typical English text has ~15-20% spaces
+                            logger.warning(f"Response has unusually low space ratio: {space_ratio}")
+                            ai_response = ' '.join(ai_response.split())  # Force normalize spacing
+                    
+                    await manage_context(channel_id, {
+                        "role": "assistant",
+                        "content": ai_response
+                    })
+                    
+                    duration = (datetime.now() - start_time).total_seconds()
+                    await metrics.record_response_time(duration)
+                    
+                    return ai_response
                 
-                # Apply spacing fixes
-                ai_response = fix_spacing(ai_response)
-                
-                await manage_context(channel_id, {
-                    "role": "assistant",
-                    "content": ai_response
-                })
-                
-                duration = (datetime.now() - start_time).total_seconds()
-                await metrics.record_response_time(duration)
-                
-                return ai_response
-            
             error_text = await response.text()
             logger.error(f"API Error {response.status}: {error_text}")
             await metrics.record_error(f"APIError_{response.status}")
@@ -278,16 +287,13 @@ async def fetch_completion_with_hermes(
         return None
 
 def fix_spacing(text: str) -> str:
-    # Fix spaces after punctuation
+    # Fix spaces after punctuation only
     text = re.sub(r'([.,!?])([^\s])', r'\1 \2', text)
-    
-    # Fix missing spaces between words
-    text = re.sub(r'([a-zA-Z])([A-Z])', r'\1 \2', text)
     
     # Fix spaces around apostrophes
     text = re.sub(r'(\w)\'(\w)', r"\1'\2", text)
     
     # Fix multiple spaces
-    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'\s{2,}', ' ', text)
     
     return text.strip()

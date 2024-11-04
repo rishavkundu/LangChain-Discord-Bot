@@ -42,66 +42,81 @@ async def manage_context(channel_id: str, message: dict, max_history: int = 10):
 async def process_and_send_response(message, ai_response):
     """Process and send AI response with chunking and typing simulation"""
     if not ai_response:
-        await message.channel.send(f"{message.author.mention} oops! my circuits are a bit fuzzy. could you try asking that again? 🤖💫")
         return
 
-    # Check if response appears truncated
-    if len(ai_response) >= 1500 and not any(ai_response.endswith(end) for end in ['.', '!', '?', '<end>']):
-        # Response might be truncated, send a graceful fallback
-        await message.channel.send(f"{message.author.mention} i had so much to say, but let me keep it brief instead! 😅 could you ask me to focus on a specific part?")
-        return
+    # Extract image generation tags first
+    image_matches = re.finditer(r'<generate_image>(.*?)</generate_image>', ai_response)
+    
+    # Remove the tags from the response text
+    cleaned_response = re.sub(r'<generate_image>.*?</generate_image>', '', ai_response)
+    
+    # Process and send the text response first
+    thought_segments = []
+    current_segment = ""
+    
+    # More intelligent thought segmentation
+    breakpoints = ['. ', '! ', '? ', '... ', '…']
+    continuation_markers = ['but', 'and', 'so', 'because', 'which', 'while']
+
+    for char in cleaned_response:
+        current_segment += char
+        buffer = ""
+        
+        # Check for natural breakpoints
+        for bp in breakpoints:
+            if current_segment.endswith(bp):
+                # Don't break if next word is a continuation
+                next_word = cleaned_response[len(current_segment):].lstrip().split(' ')[0].lower()
+                if next_word not in continuation_markers:
+                    cleaned = current_segment.strip()
+                    if len(cleaned) > 3 and not all(c in '.!?…' for c in cleaned):
+                        thought_segments.append(cleaned)
+                    current_segment = ""
+                buffer = ""
+                break
+
+    # Add remaining text if meaningful
+    if current_segment.strip() and len(current_segment.strip()) > 3:
+        thought_segments.append(current_segment.strip())
+
+    # Group related thoughts
+    i = 0
+    while i < len(thought_segments):
+        current_group = [thought_segments[i]]
+        while (i + 1 < len(thought_segments) and 
+               should_group_thoughts(current_group[-1], thought_segments[i + 1])):
+            current_group.append(thought_segments[i + 1])
+            i += 1
+        
+        # Send grouped thoughts together
+        grouped_message = ' '.join(current_group)
+        typing_time = min(len(grouped_message) * random.uniform(0.02, 0.08), 4.0)
+        
+        async with message.channel.typing():
+            await asyncio.sleep(typing_time)
+        await message.channel.send(grouped_message)
+        
+        # Add natural pause between thought groups
+        await asyncio.sleep(random.uniform(1.0, 2.5))
+        i += 1
 
     # Extract and save any user notes
     cleaned_response, notes = UserNotesManager.extract_user_notes(ai_response)
     
-    # Extract image generation tags
-    image_tags = re.findall(r'<generate_image>(.*?)</generate_image>', cleaned_response, re.DOTALL)
-    cleaned_response = re.sub(r'<generate_image>.*?</generate_image>', '', cleaned_response, flags=re.DOTALL)
-    
-    # Process any image generation requests
-    for image_prompt in image_tags:
+    # Handle any image generations
+    for match in image_matches:
+        prompt = match.group(1)
         async with message.channel.typing():
-            image_data = await generate_image(image_prompt)
+            image_data = await generate_image(prompt)
             if image_data:
-                await message.channel.send(file=discord.File(image_data, 'generated_image.png'))
+                # Create Discord file object from bytes
+                file = discord.File(fp=image_data, filename="generated_image.png")
+                await message.channel.send(file=file)
             else:
-                await message.channel.send("Sorry, I couldn't generate that image 😅")
+                await message.channel.send("oops! something went wrong generating that image 😅")
 
     for note in notes:
         notes_manager.add_note(str(message.author.id), note)
-
-    # Split response into chunks
-    chunks = []
-    current_chunk = ""
-    sentences = re.split(r'(?<=[.!?])\s+', cleaned_response)
-    
-    for sentence in sentences:
-        if len(current_chunk) + len(sentence) < 1500:
-            current_chunk += sentence + " "
-        else:
-            if current_chunk:
-                chunks.append(current_chunk.strip())
-            current_chunk = sentence + " "
-    
-    if current_chunk:
-        chunks.append(current_chunk.strip())
-
-    # Send chunks with typing simulation
-    for chunk in chunks:
-        if chunk.strip():
-            # Simulate human-like typing patterns
-            typing_multiplier = 0.05
-            if any(trigger in cleaned_response.lower() for trigger in ['!', 'WAIT', 'OMG']):
-                typing_multiplier = 0.03  # Type faster when excited
-            elif '...' in cleaned_response:
-                typing_multiplier = 0.07  # Type slower when thoughtful
-
-            typing_time = min(len(chunk) * typing_multiplier, 5.0)
-            async with message.channel.typing():
-                await asyncio.sleep(typing_time)
-            await message.channel.send(chunk)
-            if len(chunks) > 1:
-                await asyncio.sleep(random.uniform(0.5, 1.5))
 
     # Maybe start a thought chain
     if await thought_chain_manager.maybe_start_chain(str(message.channel.id), message.content, cleaned_response):
@@ -163,17 +178,24 @@ async def process_and_send_response(message, ai_response):
 async def send_chunked_response(channel, response):
     chunks = []
     current_chunk = ""
-    sentences = re.split(r'(?<=[.!?])\s+', response)
     
-    for sentence in sentences:
-        if len(current_chunk) + len(sentence) < 1500:
-            current_chunk += sentence + " "
-        else:
-            if current_chunk:
-                chunks.append(current_chunk.strip())
-            current_chunk = sentence + " "
+    # Split into sentences more reliably
+    current_sentence = ""
+    for char in response:
+        current_sentence += char
+        current_chunk += char
+        
+        # Check for sentence endings
+        if char in '.!?' and not current_sentence.strip().endswith('...'):
+            cleaned_chunk = current_chunk.strip()
+            if len(cleaned_chunk) >= 4 and not all(c in '.!?…' for c in cleaned_chunk):
+                if len(cleaned_chunk) >= 1500:
+                    chunks.append(cleaned_chunk)
+                    current_chunk = ""
+            current_sentence = ""
     
-    if current_chunk:
+    # Add remaining text if meaningful
+    if current_chunk.strip() and len(current_chunk.strip()) > 3:
         chunks.append(current_chunk.strip())
 
     for chunk in chunks:
@@ -184,6 +206,15 @@ async def send_chunked_response(channel, response):
             await channel.send(chunk)
             if len(chunks) > 1:
                 await asyncio.sleep(random.uniform(0.5, 1.5))
+
+def clean_response(response: str) -> str:
+    # Remove irregular spacing patterns, but preserve intentional caps
+    cleaned = re.sub(r'\s+', ' ', response)
+    
+    # Fix punctuation spacing only
+    cleaned = re.sub(r'\s*([,.!?])\s*', r'\1 ', cleaned)
+    
+    return cleaned.strip()
 
 @bot.event
 async def on_ready():
@@ -241,3 +272,13 @@ async def shutdown(ctx):
 def run_bot():
     """Function to run the bot with the token"""
     bot.run(DISCORD_TOKEN)
+
+def should_group_thoughts(prev_segment: str, next_segment: str) -> bool:
+    # Check if thoughts are closely related
+    related_markers = [
+        (prev_segment.endswith('...') and not next_segment.startswith('...')),
+        any(next_segment.lower().startswith(w) for w in ['and', 'but', 'so', 'because']),
+        len(prev_segment) < 30 and not any(prev_segment.endswith(p) for p in ['!', '?']),
+        bool(set(prev_segment.split()) & set(next_segment.split())) # shared words
+    ]
+    return sum(related_markers) >= 2
