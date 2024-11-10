@@ -1,0 +1,67 @@
+2024-11-10 13:49:20,679 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 13:49:20,680 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 13:49:21,451 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: eb366bf8034984b8473d9425569cd2a8).
+2024-11-10 13:49:24,017 [INFO] src.bot (bot.py:244): === Cleo Bot Initialization ===
+2024-11-10 13:49:24,017 [INFO] src.bot (bot.py:245): Bot User: Cleo#0095
+2024-11-10 13:49:24,018 [INFO] src.bot (bot.py:246): Bot ID: 1227275747454877737
+2024-11-10 13:49:24,018 [INFO] src.bot (bot.py:247): Discord.py Version: 2.4.0
+2024-11-10 13:49:24,018 [INFO] src.bot (bot.py:248): Python Version: 3.12.5
+2024-11-10 13:49:24,026 [INFO] src.bot (bot.py:249): Platform: Windows 10
+2024-11-10 13:49:24,026 [INFO] src.bot (bot.py:250): === Initialization Complete ===
+2024-11-10 13:49:24,028 [INFO] src.bot (bot.py:43): Database initialized successfully
+2024-11-10 13:49:24,029 [ERROR] src.bot (bot.py:214): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 13:49:24,150 [INFO] src.bot (bot.py:264): === System Metrics ===
+2024-11-10 13:49:24,151 [INFO] src.bot (bot.py:265): Uptime: 0:00:03.470203
+2024-11-10 13:49:24,151 [INFO] src.bot (bot.py:266): CPU Usage: 0.0%
+2024-11-10 13:49:24,152 [INFO] src.bot (bot.py:267): Memory Usage: 0.1243290785673521%
+2024-11-10 13:49:24,152 [INFO] src.bot (bot.py:268): Active Threads: 11
+2024-11-10 13:49:24,152 [INFO] src.bot (bot.py:269): Messages Processed: 0
+2024-11-10 13:49:24,153 [INFO] src.bot (bot.py:270): Commands Processed: 0
+2024-11-10 13:49:24,153 [INFO] src.bot (bot.py:271): Error Count: 0
+2024-11-10 13:49:24,153 [INFO] src.bot (bot.py:272): ===================
+2024-11-10 13:51:11,221 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 13:51:11,222 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 13:51:11,810 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 45523accaffb0cf41f8edee22327e909).
+2024-11-10 13:51:14,365 [INFO] src.bot (bot.py:244): === Cleo Bot Initialization ===
+2024-11-10 13:51:14,365 [INFO] src.bot (bot.py:245): Bot User: Cleo#0095
+2024-11-10 13:51:14,365 [INFO] src.bot (bot.py:246): Bot ID: 1227275747454877737
+2024-11-10 13:51:14,365 [INFO] src.bot (bot.py:247): Discord.py Version: 2.4.0
+2024-11-10 13:51:14,366 [INFO] src.bot (bot.py:248): Python Version: 3.12.5
+2024-11-10 13:51:14,366 [INFO] src.bot (bot.py:249): Platform: Windows 10
+2024-11-10 13:51:14,366 [INFO] src.bot (bot.py:250): === Initialization Complete ===
+2024-11-10 13:51:14,369 [INFO] src.bot (bot.py:43): Database initialized successfully
+2024-11-10 13:51:14,370 [ERROR] src.bot (bot.py:214): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 13:51:14,621 [INFO] src.bot (bot.py:264): === System Metrics ===
+2024-11-10 13:51:14,621 [INFO] src.bot (bot.py:265): Uptime: 0:00:03.399208
+2024-11-10 13:51:14,622 [INFO] src.bot (bot.py:266): CPU Usage: 0.0%
+2024-11-10 13:51:14,622 [INFO] src.bot (bot.py:267): Memory Usage: 0.12544513851858508%
+2024-11-10 13:51:14,622 [INFO] src.bot (bot.py:268): Active Threads: 11
+2024-11-10 13:51:14,623 [INFO] src.bot (bot.py:269): Messages Processed: 0
+2024-11-10 13:51:14,623 [INFO] src.bot (bot.py:270): Commands Processed: 0
+2024-11-10 13:51:14,623 [INFO] src.bot (bot.py:271): Error Count: 0
+2024-11-10 13:51:14,624 [INFO] src.bot (bot.py:272): ===================
+2024-11-10 13:52:24,802 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 13:52:24,804 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 13:52:25,484 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: a168704d0a861f0400ea0932f2e5b9ea).
+2024-11-10 13:52:28,038 [INFO] src.bot (bot.py:244): === Cleo Bot Initialization ===
+2024-11-10 13:52:28,038 [INFO] src.bot (bot.py:245): Bot User: Cleo#0095
+2024-11-10 13:52:28,038 [INFO] src.bot (bot.py:246): Bot ID: 1227275747454877737
+2024-11-10 13:52:28,039 [INFO] src.bot (bot.py:247): Discord.py Version: 2.4.0
+2024-11-10 13:52:28,039 [INFO] src.bot (bot.py:248): Python Version: 3.12.5
+2024-11-10 13:52:28,039 [INFO] src.bot (bot.py:249): Platform: Windows 10
+2024-11-10 13:52:28,040 [INFO] src.bot (bot.py:250): === Initialization Complete ===
+2024-11-10 13:52:28,042 [INFO] src.bot (bot.py:43): Database initialized successfully
+2024-11-10 13:52:28,043 [ERROR] src.bot (bot.py:214): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 13:52:28,202 [INFO] src.bot (bot.py:264): === System Metrics ===
+2024-11-10 13:52:28,203 [INFO] src.bot (bot.py:265): Uptime: 0:00:03.398667
+2024-11-10 13:52:28,203 [INFO] src.bot (bot.py:266): CPU Usage: 0.0%
+2024-11-10 13:52:28,203 [INFO] src.bot (bot.py:267): Memory Usage: 0.12469578397990008%
+2024-11-10 13:52:28,204 [INFO] src.bot (bot.py:268): Active Threads: 11
+2024-11-10 13:52:28,204 [INFO] src.bot (bot.py:269): Messages Processed: 0
+2024-11-10 13:52:28,204 [INFO] src.bot (bot.py:270): Commands Processed: 0
+2024-11-10 13:52:28,205 [INFO] src.bot (bot.py:271): Error Count: 0
+2024-11-10 13:52:28,205 [INFO] src.bot (bot.py:272): ===================
+2024-11-10 13:52:34,272 [INFO] src.bot (bot.py:287): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 13:52:34,273 [INFO] src.bot (bot.py:291): 🤔 Cleo is processing a response to: cars what's your favorite car?...
+2024-11-10 13:52:34,286 [INFO] src.bot (bot.py:314): 🔄 Generating response with Hermes LLM...
+2024-11-10 13:52:52,796 [INFO] src.bot (bot.py:324): ✨ Response generated successfully, processing and sending...

@@ -125,6 +125,15 @@ async def make_api_request(
     except aiohttp.ClientError as e:
         raise APIError(f"API request failed: {str(e)}")
 
+# Initialize rate limiter and metrics collector
+rate_limiter = RateLimiter(requests_per_minute=20)
+metrics_collector = MetricsCollector()
+
+async def acquire_rate_limit():
+    """Acquire rate limit token."""
+    await rate_limiter.acquire()
+
+# Update fetch_completion_with_hermes to use rate limiting
 async def fetch_completion_with_hermes(
     prompt: str,
     channel_id: str,
@@ -133,6 +142,9 @@ async def fetch_completion_with_hermes(
 ) -> Optional[str]:
     """Fetches a completion from the API with rate limiting and error handling."""
     try:
+        # Acquire rate limit before making the request
+        await acquire_rate_limit()
+        
         manager = conversation_cache.get(channel_id)
         if not manager:
             return None
@@ -167,7 +179,3 @@ async def fetch_completion_with_hermes(
     except Exception as e:
         logger.error(f"Error in fetch_completion: {str(e)}", exc_info=True)
         return None
-
-# Initialize rate limiter and metrics collector
-rate_limiter = RateLimiter()
-metrics_collector = MetricsCollector()

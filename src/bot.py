@@ -12,6 +12,9 @@ from src.flux import generate_image
 from collections import defaultdict
 from src.thought_chain import ThoughtChainManager
 from src.emotional_state import EmotionalStateManager
+import psutil
+import platform
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -20,10 +23,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Bot setup
+# Bot setup with required intents
 intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
+intents.members = True  # Enable member cache
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Initialize managers
@@ -64,23 +68,38 @@ async def process_and_send_response(message, ai_response):
     if not ai_response:
         return
 
-    # Analyze user's tone
-    user_tone = analyze_user_tone(message.content)
-    # Adjust Cleo's response tone
-    ai_response = adjust_tone(ai_response, user_tone)
-
-    # Handle any image generations
-    ai_response = await handle_image_generation(ai_response, message.channel)
-
-    # Incorporate self-interruptions and self-corrections
-    ai_response = await thought_chain_manager.handle_thought_interruption(ai_response)
-
-    # Segment and send the response
-    await send_chunked_response(message.channel, ai_response)
-
-    # Maybe start a thought chain
-    if await thought_chain_manager.maybe_start_chain(str(message.channel.id), message.content, ai_response):
-        await handle_thought_chain(message)
+    try:
+        # Get the member object for enhanced mention capabilities
+        member = message.author
+        if isinstance(message.channel, discord.TextChannel):
+            member = message.guild.get_member(message.author.id) or message.author
+            
+        # Create mention using member object
+        mention = member.mention
+        ai_response = f"{mention} {ai_response}"
+        
+        user_tone = analyze_user_tone(message.content)
+        ai_response = adjust_tone(ai_response, user_tone)
+        ai_response = await handle_image_generation(ai_response, message.channel)
+        
+        # Handle thought interruption only once
+        ai_response = await thought_chain_manager.handle_thought_interruption(ai_response)
+        
+        # Ensure complete thoughts by checking for trailing conjunctions
+        if re.search(r'\b(and|but|so|because)\s*$', ai_response):
+            ai_response = ai_response.rstrip() + "..."
+            
+        await send_chunked_response(message.channel, ai_response)
+        
+        # Update the thought chain after sending
+        await thought_chain_manager.update_chain(str(message.channel.id), ai_response)
+    except discord.Forbidden:
+        logger.error("Bot lacks permission to mention users")
+        # Fall back to using username without mention
+        ai_response = f"{message.author.display_name} {ai_response}"
+        await send_chunked_response(message.channel, ai_response)
+    except Exception as e:
+        logger.error(f"Error in process_and_send_response: {str(e)}")
 
 async def handle_image_generation(ai_response: str, channel):
     """Extract and handle image generation tags."""
@@ -128,8 +147,10 @@ async def handle_thought_chain(message):
                 "user_id": None  # Assistant messages don't have user_id
             })
 
-            # Extract and process the response
-            await send_chunked_response(message.channel, ai_response)
+            # Process and send the response
+            await process_and_send_response(message, ai_response)
+
+            # Update the thought chain
             await thought_chain_manager.update_chain(str(message.channel.id), ai_response)
 
     except Exception as e:
@@ -138,34 +159,48 @@ async def handle_thought_chain(message):
 async def send_chunked_response(channel, response):
     """Send the response in chunks with natural pauses and typing simulation."""
     segments = segment_thoughts(response)
-
-    for segment in segments:
+    
+    for i, segment in enumerate(segments):
         if segment.strip():
-            typing_time = min(len(segment) * random.uniform(0.03, 0.06), 5.0)
+            # Calculate typing time based on message length, but with a lower minimum
+            typing_time = min(len(segment) * 0.02, 2.0)
+            
+            # Only show typing indicator right before sending
             async with channel.typing():
                 await asyncio.sleep(typing_time)
             await channel.send(segment)
-            await asyncio.sleep(random.uniform(0.5, 1.5))
+            
+            # Shorter pause between thoughts
+            if i < len(segments) - 1:  # Don't pause after last segment
+                await asyncio.sleep(random.uniform(0.5, 1.0))
 
 def segment_thoughts(response):
     """Segment response into appropriate message chunks."""
-    # Split on sentence boundaries
-    sentence_endings = re.compile(r'(?<=[.!?])\s+')
-    sentences = sentence_endings.split(response)
-
-    # Combine sentences into paragraphs
-    max_chunk_length = 300  # Adjust as needed
+    # Split on thought boundaries (multiple newlines or clear thought transitions)
+    thought_breaks = re.split(r'\n\s*\n|\.\s+(?=[A-Z])|(?<=[.!?])\s+(?=\w)', response)
+    
+    # Clean and filter chunks
     chunks = []
-    current_chunk = ''
-    for sentence in sentences:
-        if len(current_chunk) + len(sentence) + 1 <= max_chunk_length:
-            current_chunk += (' ' if current_chunk else '') + sentence
-        else:
-            chunks.append(current_chunk.strip())
-            current_chunk = sentence
-    if current_chunk:
-        chunks.append(current_chunk.strip())
-    return chunks[:3]  # Limit to 3 messages max
+    for thought in thought_breaks:
+        thought = thought.strip()
+        if thought:
+            # Split long thoughts if needed
+            if len(thought) > 300:
+                sentences = re.split(r'(?<=[.!?])\s+', thought)
+                current_chunk = ''
+                for sentence in sentences:
+                    if len(current_chunk) + len(sentence) + 1 <= 300:
+                        current_chunk += (' ' if current_chunk else '') + sentence
+                    else:
+                        if current_chunk:
+                            chunks.append(current_chunk.strip())
+                        current_chunk = sentence
+                if current_chunk:
+                    chunks.append(current_chunk.strip())
+            else:
+                chunks.append(thought)
+    
+    return chunks  # Remove the [:3] limit to allow natural thought flow
 
 
 # Load extensions if any
@@ -178,18 +213,68 @@ async def load_extensions():
     except Exception as e:
         logger.error(f"Failed to load image_cog: {e}")
 
+class BotMetrics:
+    def __init__(self):
+        self.start_time = datetime.now()
+        self.message_count = 0
+        self.command_count = 0
+        self.error_count = 0
+
+    def get_uptime(self):
+        return datetime.now() - self.start_time
+
+    def get_system_metrics(self):
+        process = psutil.Process()
+        return {
+            'cpu_percent': process.cpu_percent(),
+            'memory_percent': process.memory_percent(),
+            'threads': process.num_threads(),
+            'uptime': self.get_uptime(),
+            'messages_processed': self.message_count,
+            'commands_processed': self.command_count,
+            'errors': self.error_count
+        }
+
+# Initialize metrics
+metrics = BotMetrics()
+
 @bot.event
 async def on_ready():
     """Called when the bot is ready and connected"""
+    logger.info("=== Cleo Bot Initialization ===")
+    logger.info(f"Bot User: {bot.user}")
+    logger.info(f"Bot ID: {bot.user.id}")
+    logger.info(f"Discord.py Version: {discord.__version__}")
+    logger.info(f"Python Version: {platform.python_version()}")
+    logger.info(f"Platform: {platform.system()} {platform.release()}")
+    logger.info("=== Initialization Complete ===")
+    
     await setup_database()
-    logger.info(f'Connected as {bot.user}')
-    print(f"Connected as {bot.user}")
-    try:
-        await load_extensions()
-        await bot.tree.sync()
-        logger.info("Successfully synced application commands")
-    except Exception as e:
-        logger.error(f"Failed to sync commands: {e}")
+    await load_extensions()
+    await bot.tree.sync()
+
+    # Start metrics logging
+    bot.loop.create_task(log_metrics())
+
+async def log_metrics():
+    """Periodically log system metrics"""
+    while True:
+        try:
+            metrics_data = metrics.get_system_metrics()
+            logger.info("=== System Metrics ===")
+            logger.info(f"Uptime: {metrics_data['uptime']}")
+            logger.info(f"CPU Usage: {metrics_data['cpu_percent']}%")
+            logger.info(f"Memory Usage: {metrics_data['memory_percent']}%")
+            logger.info(f"Active Threads: {metrics_data['threads']}")
+            logger.info(f"Messages Processed: {metrics_data['messages_processed']}")
+            logger.info(f"Commands Processed: {metrics_data['commands_processed']}")
+            logger.info(f"Error Count: {metrics_data['errors']}")
+            logger.info("===================")
+            
+            await asyncio.sleep(300)  # Log every 5 minutes
+        except Exception as e:
+            logger.error(f"Error in metrics logging: {e}")
+            await asyncio.sleep(60)
 
 @bot.event
 async def on_message(message):
@@ -197,28 +282,36 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
-    logger.info(f"Message received from {message.author.name}: {message.content}")
+    try:
+        metrics.message_count += 1
+        logger.info(f"📨 Message received from {message.author.name} in {message.channel.name}")
+        
+        # Only log processing for messages that trigger Cleo
+        if bot.user.mentioned_in(message) or re.search(r'\bcleo\b', message.content, re.IGNORECASE):
+            logger.info(f"🤔 Cleo is processing a response to: {message.content[:50]}...")
+            
+            # Get or create conversation manager for this channel
+            channel_id = str(message.channel.id)
+            if channel_id not in conversation_cache:
+                conversation_cache[channel_id] = ConversationManager(channel_id)
+            
+            # Store message in context
+            await conversation_cache[channel_id].add_message({
+                "role": "user",
+                "content": message.content,
+                "user_id": str(message.author.id),
+                "username": message.author.display_name
+            })
 
-    # Get or create conversation manager for this channel
-    channel_id = str(message.channel.id)
-    if channel_id not in conversation_cache:
-        conversation_cache[channel_id] = ConversationManager(channel_id)
-    
-    # Store message in context
-    await conversation_cache[channel_id].add_message({
-        "role": "user",
-        "content": f"{message.author.name}: {message.content}",
-        "user_id": str(message.author.id)
-    })
+            try:
+                # Extract and clean the user's message
+                user_prompt = message.content
+                if bot.user.mentioned_in(message):
+                    user_prompt = re.sub(r'<@!?{}>'.format(bot.user.id), '', user_prompt)
+                user_prompt = re.sub(r'\bcleo\b', '', user_prompt, flags=re.IGNORECASE)
+                user_prompt = user_prompt.strip()
 
-    # Only respond to mentions or when "cleo" is in the message
-    if bot.user.mentioned_in(message) or re.search(r'\bcleo\b', message.content, re.IGNORECASE):
-        user_prompt = re.sub(r'<@!?{}>'.format(bot.user.id), '', message.content)
-        user_prompt = re.sub(r'\bcleo\b', '', user_prompt, flags=re.IGNORECASE)
-        user_prompt = user_prompt.strip()
-
-        try:
-            async with message.channel.typing():
+                logger.info("🔄 Generating response with Hermes LLM...")
                 max_tokens = random.randint(100, 250)
                 ai_response = await fetch_completion_with_hermes(
                     user_prompt,
@@ -228,23 +321,24 @@ async def on_message(message):
                 )
 
                 if ai_response:
-                    # Use proper Discord mention format with user ID
-                    ai_response = f"<@{message.author.id}> {ai_response}"
+                    logger.info("✨ Response generated successfully, processing and sending...")
+                    await process_and_send_response(message, ai_response)
+                else:
+                    logger.warning("⚠️ No response generated from LLM")
 
-                # Update emotional state
-                await emotional_state_manager.analyze_message(
-                    message.content, 
-                    str(message.author.id), 
-                    conversation_cache[str(message.channel.id)]
+            except Exception as e:
+                metrics.error_count += 1
+                logger.error(f"❌ Error processing message: {str(e)}", exc_info=True)
+                await message.channel.send(
+                    f"Uh-oh! Something went wrong, {message.author.name}. Let's give it another shot later! 🛠️"
                 )
 
-                await process_and_send_response(message, ai_response)
-
-        except Exception as e:
-            logger.error(f"Error in on_message: {str(e)}", exc_info=True)
-            await message.channel.send(
-                f"Uh-oh! Something went wrong, {message.author.name}. Let's give it another shot later! 🛠️"
-            )
+    except Exception as e:
+        metrics.error_count += 1
+        logger.error(f"❌ Error in message handler: {str(e)}", exc_info=True)
+        await message.channel.send(
+            f"Uh-oh! Something went wrong, {message.author.name}. Let's give it another shot later! 🛠️"
+        )
 
     await bot.process_commands(message)
 

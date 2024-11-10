@@ -4,6 +4,7 @@ from typing import List, Dict
 import random
 from datetime import datetime
 from src.types import EmotionalState, ConversationContextProvider
+import math
 
 class EmotionalStateManager:
     def __init__(self):
@@ -29,10 +30,13 @@ class EmotionalStateManager:
         state.mood = min(1.0, max(0.0, state.mood + sentiment * 0.1))
         context = await context_provider.get_relevant_context()
         
-        decay_rate = 0.95
+        last_update = self.states.get(user_id, {}).get('last_update', datetime.now())
+        time_diff = (datetime.now() - last_update).total_seconds()
+        decay_factor = math.exp(-time_diff / 3600)  # 1-hour half-life
+        
         for attr in vars(state):
             if attr != 'mood':
-                setattr(state, attr, max(0.0, min(1.0, getattr(state, attr) * decay_rate)))
+                setattr(state, attr, max(0.0, min(1.0, getattr(state, attr) * decay_factor)))
     
     def calculate_sentiment(self, message: str) -> float:
         positive_words = set(['good', 'great', 'fantastic', 'amazing', 'love', 'happy', 'wonderful', 'best', 'awesome'])

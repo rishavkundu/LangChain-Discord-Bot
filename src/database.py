@@ -1,3 +1,4 @@
+from asyncio.log import logger
 import sqlite3
 import json
 from datetime import datetime
@@ -46,25 +47,31 @@ class DatabaseManager:
     async def add_message(self, channel_id: str, message: Dict[str, Any]) -> None:
         """Add a message to the database."""
         async with aiosqlite.connect(self.db_path) as db:
-            # Ensure conversation exists
-            await db.execute(
-                "INSERT OR REPLACE INTO conversations (channel_id, last_updated) VALUES (?, ?)",
-                (channel_id, datetime.now().isoformat())
-            )
-            
-            # Add message
-            await db.execute("""
-                INSERT INTO messages (channel_id, content, role, timestamp, user_id)
-                VALUES (?, ?, ?, ?, ?)
-            """, (
-                channel_id,
-                message["content"],
-                message.get("role", "user"),
-                message.get("timestamp", datetime.now()).isoformat(),
-                message.get("user_id")
-            ))
-            
-            await db.commit()
+            try:
+                await db.execute('BEGIN')
+                # Ensure conversation exists
+                await db.execute(
+                    "INSERT OR REPLACE INTO conversations (channel_id, last_updated) VALUES (?, ?)",
+                    (channel_id, datetime.now().isoformat())
+                )
+                
+                # Add message
+                await db.execute("""
+                    INSERT INTO messages (channel_id, content, role, timestamp, user_id)
+                    VALUES (?, ?, ?, ?, ?)
+                """, (
+                    channel_id,
+                    message["content"],
+                    message.get("role", "user"),
+                    message.get("timestamp", datetime.now()).isoformat(),
+                    message.get("user_id")
+                ))
+                
+                await db.commit()
+            except Exception as e:
+                await db.rollback()
+                logger.error(f"Database error: {str(e)}")
+                raise
 
     async def get_context(self, channel_id: str, limit: int = 50) -> List[Dict[str, Any]]:
         """Retrieve conversation context for a channel."""

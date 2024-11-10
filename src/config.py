@@ -2,38 +2,51 @@
 
 import os
 import logging
+import sys
 from dotenv import load_dotenv
+import coloredlogs
 
 load_dotenv()
 
+# Set console output to UTF-8
+if sys.platform.startswith('win'):
+    import codecs
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+    sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+
+# Configure logging with colored output and detailed formatting
+coloredlogs.install(
+    level=logging.INFO,
+    fmt='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+    level_styles={
+        'debug': {'color': 'green'},
+        'info': {'color': 'white'},
+        'warning': {'color': 'yellow'},
+        'error': {'color': 'red'},
+        'critical': {'color': 'red', 'bold': True},
+    },
+    field_styles={
+        'asctime': {'color': 'cyan'},
+        'levelname': {'color': 'white', 'bold': True},
+        'name': {'color': 'magenta'}
+    },
+    encoding='utf-8'  # Specify UTF-8 encoding
+)
+
+# Create logs directory if it doesn't exist
+os.makedirs('logs', exist_ok=True)
+
+# Configure file handler with UTF-8 encoding
+file_handler = logging.FileHandler('logs/cleo.log', encoding='utf-8')
+file_handler.setFormatter(logging.Formatter(
+    '%(asctime)s [%(levelname)s] %(name)s (%(filename)s:%(lineno)d): %(message)s'
+))
+
+# Add handlers to root logger
+logging.getLogger().addHandler(file_handler)
+
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('bot.log'),
-        logging.StreamHandler()
-    ]
-)
-
-# Adjust specific logger configurations
-discord_logger = logging.getLogger('discord')
-discord_logger.setLevel(logging.WARNING)
-
-aiohttp_logger = logging.getLogger('aiohttp')
-aiohttp_logger.setLevel(logging.WARNING)
-
-# Create a formatter that includes more details
-detailed_formatter = logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
-)
-
-# Apply formatter to all handlers
-for handler in logging.getLogger().handlers:
-    handler.setFormatter(detailed_formatter)
 
 MAX_CONTEXT_SIZE = 50  # Focus on more recent messages for relevancy
 CONTEXT_DECAY_HOURS = 4  # Faster context decay for dynamic conversations
