@@ -15,6 +15,8 @@ from src.emotional_state import EmotionalStateManager
 import psutil
 import platform
 from datetime import datetime
+import time
+from src.utils.timing import log_timing
 
 # Configure logging
 logging.basicConfig(
@@ -62,20 +64,37 @@ def adjust_tone(ai_response: str, user_tone: str) -> str:
         ai_response = re.sub(r'[^\w\s,]', '', ai_response)
     return ai_response.strip()
 
+@log_timing("LLM Response Generation")
+async def fetch_completion_with_hermes(prompt: str, channel_id: str, user_id: str, max_tokens: int = 150):
+    start_queue_time = time.perf_counter()
+    logger.info("🔄 Queuing request to Hermes LLM...")
+    
+    try:
+        response = await fetch_completion_with_hermes(prompt, channel_id, user_id, max_tokens)
+        queue_time = (time.perf_counter() - start_queue_time) * 1000
+        logger.info(f"✨ Response received from queue after {queue_time:.2f}ms")
+        return response
+    except Exception as e:
+        queue_time = (time.perf_counter() - start_queue_time) * 1000
+        logger.error(f"❌ Queue processing failed after {queue_time:.2f}ms: {str(e)}")
+        raise
 
+@log_timing("Message Processing")
 async def process_and_send_response(message, ai_response):
     """Process and send AI response with chunking and typing simulation."""
     if not ai_response:
         return
 
     try:
+        start_time = time.perf_counter()
+        logger.info("🔄 Starting response processing...")
         # Get the member object for enhanced mention capabilities
         member = message.author
         if isinstance(message.channel, discord.TextChannel):
             member = message.guild.get_member(message.author.id) or message.author
             
-        # Create mention using member object
-        mention = member.mention
+        # Create mention using member object with fallback
+        mention = getattr(member, 'mention', f'<@{member.id}>')
         ai_response = f"{mention} {ai_response}"
         
         user_tone = analyze_user_tone(message.content)
@@ -93,6 +112,7 @@ async def process_and_send_response(message, ai_response):
         
         # Update the thought chain after sending
         await thought_chain_manager.update_chain(str(message.channel.id), ai_response)
+        logger.info(f"✨ Response processed and sent in {time.perf_counter() - start_time:.2f}ms")
     except discord.Forbidden:
         logger.error("Bot lacks permission to mention users")
         # Fall back to using username without mention

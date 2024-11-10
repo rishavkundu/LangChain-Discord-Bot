@@ -17,7 +17,8 @@ if sys.platform.startswith('win'):
 # Configure logging with colored output and detailed formatting
 coloredlogs.install(
     level=logging.INFO,
-    fmt='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+    fmt='%(asctime)s.%(msecs)03d [%(levelname)s] %(name)s: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
     level_styles={
         'debug': {'color': 'green'},
         'info': {'color': 'white'},
@@ -29,8 +30,7 @@ coloredlogs.install(
         'asctime': {'color': 'cyan'},
         'levelname': {'color': 'white', 'bold': True},
         'name': {'color': 'magenta'}
-    },
-    encoding='utf-8'  # Specify UTF-8 encoding
+    }
 )
 
 # Create logs directory if it doesn't exist
