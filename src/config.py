@@ -35,8 +35,8 @@ detailed_formatter = logging.Formatter(
 for handler in logging.getLogger().handlers:
     handler.setFormatter(detailed_formatter)
 
-MAX_CONTEXT_SIZE = 20  # Focus on more recent messages for relevancy
-CONTEXT_DECAY_HOURS = 1  # Faster context decay for dynamic conversations
+MAX_CONTEXT_SIZE = 50  # Focus on more recent messages for relevancy
+CONTEXT_DECAY_HOURS = 4  # Faster context decay for dynamic conversations
 
 def load_system_prompt():
     return """

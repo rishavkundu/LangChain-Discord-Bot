@@ -7,9 +7,8 @@ import logging
 import random
 import asyncio
 from src.config import system_prompt, DISCORD_TOKEN
-from src.api_client import fetch_completion_with_hermes
+from src.api_client import fetch_completion_with_hermes, conversation_cache, ConversationManager
 from src.flux import generate_image
-from src.user_notes import UserNotesManager
 from collections import defaultdict
 from src.thought_chain import ThoughtChainManager
 from src.emotional_state import EmotionalStateManager
@@ -28,16 +27,16 @@ intents.guilds = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Initialize managers
-notes_manager = UserNotesManager()
-message_history = defaultdict(list)
 thought_chain_manager = ThoughtChainManager()
 emotional_state_manager = EmotionalStateManager()
 
-async def manage_context(channel_id: str, message: dict, max_history: int = 10):
-    """Manage message history for each channel."""
-    message_history[channel_id].append(message)
-    message_history[channel_id] = message_history[channel_id][-max_history:]
-    return message_history[channel_id]
+# Initialize database
+async def setup_database():
+    """Initialize the database for all conversation managers"""
+    # Create default conversation manager for initialization
+    default_manager = ConversationManager("setup")
+    await default_manager.initialize()
+    logger.info("Database initialized successfully")
 
 def analyze_user_tone(message_content: str) -> str:
     """Analyzes the user's tone based on message content."""
@@ -69,11 +68,6 @@ async def process_and_send_response(message, ai_response):
     user_tone = analyze_user_tone(message.content)
     # Adjust Cleo's response tone
     ai_response = adjust_tone(ai_response, user_tone)
-
-    # Extract and save any user notes
-    ai_response, notes = UserNotesManager.extract_user_notes(ai_response)
-    for note in notes:
-        notes_manager.add_note(str(message.author.id), note)
 
     # Handle any image generations
     ai_response = await handle_image_generation(ai_response, message.channel)
@@ -128,17 +122,13 @@ async def handle_thought_chain(message):
                 break
 
             # Add Cleo's response to the context
-            await manage_context(str(message.channel.id), {
+            await conversation_cache[str(message.channel.id)].add_message({
                 "role": "assistant",
                 "content": ai_response,
                 "user_id": None  # Assistant messages don't have user_id
             })
 
             # Extract and process the response
-            ai_response, notes = UserNotesManager.extract_user_notes(ai_response)
-            for note in notes:
-                notes_manager.add_note(str(message.author.id), note)
-
             await send_chunked_response(message.channel, ai_response)
             await thought_chain_manager.update_chain(str(message.channel.id), ai_response)
 
@@ -190,7 +180,8 @@ async def load_extensions():
 
 @bot.event
 async def on_ready():
-    """Event handler for when the bot is ready."""
+    """Called when the bot is ready and connected"""
+    await setup_database()
     logger.info(f'Connected as {bot.user}')
     print(f"Connected as {bot.user}")
     try:
@@ -208,8 +199,13 @@ async def on_message(message):
 
     logger.info(f"Message received from {message.author.name}: {message.content}")
 
-    # Store all messages for context, regardless of mention
-    await manage_context(str(message.channel.id), {
+    # Get or create conversation manager for this channel
+    channel_id = str(message.channel.id)
+    if channel_id not in conversation_cache:
+        conversation_cache[channel_id] = ConversationManager(channel_id)
+    
+    # Store message in context
+    await conversation_cache[channel_id].add_message({
         "role": "user",
         "content": f"{message.author.name}: {message.content}",
         "user_id": str(message.author.id)
@@ -232,11 +228,13 @@ async def on_message(message):
                 )
 
                 if ai_response:
-                    ai_response = f"{message.author.mention} {ai_response}"
+                    ai_response = f"<@{message.author.name}> {ai_response}"
 
                 # Update emotional state
                 await emotional_state_manager.analyze_message(
-                    message.content, str(message.author.id), message_history[str(message.channel.id)]
+                    message.content, 
+                    str(message.author.id), 
+                    conversation_cache[str(message.channel.id)]
                 )
 
                 await process_and_send_response(message, ai_response)
