@@ -1,5 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
 .env
-.chroma
-.venv
-__pycache__
-user_notes
+.venv/
+venv/
+ENV/
+
+# Development
+.chroma/
+user_notes/
+
+# IDE
+.vscode/
+.idea/
+*.swp

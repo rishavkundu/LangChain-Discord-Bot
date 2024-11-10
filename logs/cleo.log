@@ -8706,3 +8706,54 @@ NameError: name 'process_message_content' is not defined
 2024-11-10 14:30:33,700 [INFO] src.bot (bot.py:269): Commands Processed: 0
 2024-11-10 14:30:33,700 [INFO] src.bot (bot.py:270): Error Count: 0
 2024-11-10 14:30:33,700 [INFO] src.bot (bot.py:271): ===================
+2024-11-10 14:30:52,707 [INFO] src.bot (bot.py:287): 📨 Message received from rikufps in bots
+2024-11-10 14:30:52,864 [INFO] src.bot (bot.py:292): 🤔 Cleo is processing a response to: what happened?...
+2024-11-10 14:30:52,865 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:30:52,868 [INFO] src.api_client (api_client.py:169): Making API request with prompt: what happened?...
+2024-11-10 14:31:23,637 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 14:31:23,638 [INFO] src.bot (bot.py:82): ✨ LLM response received successfully
+2024-11-10 14:31:23,638 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 30772.57ms
+2024-11-10 14:31:23,638 [INFO] src.bot (bot.py:97): 🔄 Starting response processing...
+2024-11-10 14:31:25,859 [INFO] src.bot (bot.py:110): ✨ Response processed and sent in 2.22ms
+2024-11-10 14:31:25,866 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2228.17ms
+2024-11-10 14:31:25,866 [INFO] src.bot (bot.py:304): ✨ Message sent successfully
+2024-11-10 14:35:28,949 [INFO] src.bot (bot.py:287): 📨 Message received from yatchee in bots
+2024-11-10 14:35:29,120 [INFO] src.bot (bot.py:292): 🤔 Cleo is processing a response to: , how can we hijack mo. he gets security clearance...
+2024-11-10 14:35:29,120 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:35:29,122 [INFO] src.api_client (api_client.py:169): Making API request with prompt: , how can we hijack mo. he gets security clearance...
+2024-11-10 14:35:33,742 [INFO] src.bot (bot.py:263): === System Metrics ===
+2024-11-10 14:35:33,743 [INFO] src.bot (bot.py:264): Uptime: 0:05:03.437578
+2024-11-10 14:35:33,743 [INFO] src.bot (bot.py:265): CPU Usage: 8.8%
+2024-11-10 14:35:33,743 [INFO] src.bot (bot.py:266): Memory Usage: 0.1236913300237904%
+2024-11-10 14:35:33,744 [INFO] src.bot (bot.py:267): Active Threads: 5
+2024-11-10 14:35:33,744 [INFO] src.bot (bot.py:268): Messages Processed: 0
+2024-11-10 14:35:33,744 [INFO] src.bot (bot.py:269): Commands Processed: 0
+2024-11-10 14:35:33,744 [INFO] src.bot (bot.py:270): Error Count: 0
+2024-11-10 14:35:33,745 [INFO] src.bot (bot.py:271): ===================
+2024-11-10 14:35:50,148 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 14:35:50,149 [INFO] src.bot (bot.py:82): ✨ LLM response received successfully
+2024-11-10 14:35:50,149 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 21028.29ms
+2024-11-10 14:35:50,149 [INFO] src.bot (bot.py:97): 🔄 Starting response processing...
+2024-11-10 14:35:52,351 [INFO] src.bot (bot.py:110): ✨ Response processed and sent in 2.20ms
+2024-11-10 14:35:52,363 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2213.85ms
+2024-11-10 14:35:52,363 [INFO] src.bot (bot.py:304): ✨ Message sent successfully
+2024-11-10 14:39:44,410 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:39:44,412 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:39:45,063 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 30c53e1b66568c3cd9850b2251ee885b).
+2024-11-10 14:39:47,663 [INFO] src.bot (bot.py:243): === Cleo Bot Initialization ===
+2024-11-10 14:39:47,663 [INFO] src.bot (bot.py:244): Bot User: Cleo#0095
+2024-11-10 14:39:47,663 [INFO] src.bot (bot.py:245): Bot ID: 1227275747454877737
+2024-11-10 14:39:47,664 [INFO] src.bot (bot.py:246): Discord.py Version: 2.4.0
+2024-11-10 14:39:47,664 [INFO] src.bot (bot.py:247): Python Version: 3.12.5
+2024-11-10 14:39:47,664 [INFO] src.bot (bot.py:248): Platform: Windows 10
+2024-11-10 14:39:47,664 [INFO] src.bot (bot.py:249): === Initialization Complete ===
+2024-11-10 14:39:47,666 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:39:47,833 [INFO] src.bot (bot.py:263): === System Metrics ===
+2024-11-10 14:39:47,834 [INFO] src.bot (bot.py:264): Uptime: 0:00:03.373739
+2024-11-10 14:39:47,834 [INFO] src.bot (bot.py:265): CPU Usage: 5.8%
+2024-11-10 14:39:47,834 [INFO] src.bot (bot.py:266): Memory Usage: 0.12531758880987273%
+2024-11-10 14:39:47,834 [INFO] src.bot (bot.py:267): Active Threads: 11
+2024-11-10 14:39:47,835 [INFO] src.bot (bot.py:268): Messages Processed: 0
+2024-11-10 14:39:47,835 [INFO] src.bot (bot.py:269): Commands Processed: 0
+2024-11-10 14:39:47,835 [INFO] src.bot (bot.py:270): Error Count: 0
+2024-11-10 14:39:47,836 [INFO] src.bot (bot.py:271): ===================

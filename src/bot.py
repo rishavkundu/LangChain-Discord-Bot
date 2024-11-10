@@ -286,6 +286,14 @@ async def on_message(message):
             
         logger.info(f"📨 Message received from {message.author.name} in {message.channel.name}")
         
+        # Save user message to context
+        await conversation_cache[str(message.channel.id)].add_message({
+            "role": "user",
+            "content": process_message_content(message.content),
+            "user_id": str(message.author.id),
+            "timestamp": datetime.now().isoformat()
+        })
+        
         # Show typing indicator
         async with message.channel.typing():
             user_prompt = process_message_content(message.content)
