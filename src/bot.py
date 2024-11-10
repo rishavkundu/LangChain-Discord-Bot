@@ -23,6 +23,7 @@ from datetime import datetime
 import time
 from src.utils.timing import log_timing
 from src.utils.metrics import BotMetrics
+import threading
 
 # Configure logging
 logging.basicConfig(
@@ -74,18 +75,61 @@ def adjust_tone(ai_response: str, user_tone: str) -> str:
 async def process_llm_response(prompt: str, channel_id: str, user_id: str, max_tokens: int = 500):
     """Process and time LLM response."""
     try:
-        logger.info("🔄 Queuing request to Hermes LLM...")
-        response = await api_fetch_completion(prompt, channel_id, user_id, max_tokens)
+        # Check if this is a search request
+        if 'search' in prompt.lower():
+            logger.info("🔍 Search keyword detected in prompt, generating search query...")
+            # First get Cleo to generate a search query
+            search_prompt = f"""
+Based on this user request: "{prompt}"
+Generate a specific, detailed search query using the sonar("query") format.
+Example: if user asks "search for SpaceX news", respond with: sonar("latest SpaceX launches and company updates")
+Keep the query focused and relevant.
+"""
+            search_response = await api_fetch_completion(search_prompt, channel_id, user_id, max_tokens=100)
+            if search_response:
+                initial_response = search_response
+            else:
+                initial_response = f'sonar("{prompt}")'  # Fallback direct search
+        else:
+            logger.info("🔄 Queuing request to Hermes LLM...")
+            initial_response = await api_fetch_completion(prompt, channel_id, user_id, max_tokens)
         
-        if not response:
+        if not initial_response:
             logger.error("Empty response from LLM")
             return "I'm thinking about how to respond to that..."
             
         # Clean up any stop sequences
-        response = response.replace("<|end|>", "").strip()
+        initial_response = initial_response.replace("<|end|>", "").strip()
         
+        # Check for sonar search commands
+        search_results = await thought_chain_manager.handle_sonar_search(initial_response)
+        if search_results:
+            logger.info("🔍 Sonar search detected, processing search results...")
+            metrics.increment_searches()  # Increment search counter
+            original_response, search_data = search_results
+            
+            # Create augmented prompt with search results
+            augmented_prompt = f"""
+Based on this search data: "{search_data}", 
+Please provide an informed response to: "{prompt}"
+Remember to:
+- maintain my casual, lowercase style with emojis
+- incorporate the search information naturally
+- keep the response clear and engaging
+- include specific details from the search results
+"""
+            # Get new response with search context
+            logger.info("🔄 Generating augmented response with search data...")
+            final_response = await api_fetch_completion(augmented_prompt, channel_id, user_id, max_tokens)
+            if final_response:
+                logger.info("✨ Augmented response generated successfully")
+                return final_response.strip()
+            else:
+                logger.warning("Failed to generate augmented response, using original")
+                return original_response
+            
         logger.info("✨ LLM response received successfully")
-        return response
+        return initial_response
         
     except Exception as e:
         logger.error(f"Error in LLM processing: {str(e)}")
@@ -272,13 +316,13 @@ async def log_metrics():
             logger.info(f"Active Threads: {metrics_data['threads']}")
             logger.info(f"Messages Processed: {metrics_data['messages_processed']}")
             logger.info(f"Commands Processed: {metrics_data['commands_processed']}")
-            logger.info(f"Error Count: {metrics_data['errors']}")
+            logger.info(f"Searches Performed: {metrics_data['searches_performed']}")
+            logger.info(f"Error Count: {metrics_data['error_count']}")
             logger.info("===================")
-            
             await asyncio.sleep(300)  # Log every 5 minutes
         except Exception as e:
-            logger.error(f"Error in metrics logging: {e}")
-            await asyncio.sleep(60)
+            logger.error(f"Error in metrics logging: {str(e)}")
+            await asyncio.sleep(60)  # Wait a minute before retrying if there's an error
 
 @bot.event
 async def on_message(message):

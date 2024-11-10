@@ -8,6 +8,8 @@ from typing import Optional, Dict, List
 import re
 from src.prompt_templates import REPROMPT_TEMPLATES  # Import reprompt templates
 import logging
+import aiohttp
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -122,3 +124,62 @@ Think through your response step-by-step, and provide a thoughtful continuation 
             return interrupted_thought
             
         return current_thought
+
+    async def handle_sonar_search(self, response: str) -> Optional[tuple[str, str]]:
+        """
+        Extracts and processes sonar search commands from Cleo's response.
+        Returns tuple of (original_query, search_results) if found, None otherwise.
+        """
+        sonar_pattern = r'sonar\("([^"]+)"\)'
+        match = re.search(sonar_pattern, response)
+        
+        if not match:
+            logger.debug("No sonar search pattern found in response")
+            return None
+            
+        search_query = match.group(1)
+        logger.info(f"=== Sonar Search Operation ===")
+        logger.info(f"🔍 Search Query: {search_query[:50]}...")
+        logger.info(f"📝 Original Response: {response[:100]}...")
+        
+        try:
+            async with aiohttp.ClientSession() as session:
+                from src.perplexity import get_perplexity_completion
+                
+                logger.info("=== Search Request Details ===")
+                logger.info("🌐 Initiating Perplexity API search request...")
+                search_start_time = time.time()
+                
+                search_results = await get_perplexity_completion(
+                    search_query,
+                    system_prompt="You are a helpful search assistant. Provide concise, factual information about the query.",
+                    max_tokens=300
+                )
+                
+                search_duration = (time.time() - search_start_time) * 1000
+                
+                if search_results:
+                    logger.info("=== Search Results ===")
+                    logger.info(f"⏱️ Search completed in {search_duration:.2f}ms")
+                    logger.info(f"📊 Results length: {len(search_results)} characters")
+                    logger.debug(f"📑 First 100 chars: {search_results[:100]}...")
+                    
+                    # Remove the sonar command from the original response
+                    cleaned_response = re.sub(sonar_pattern, '', response).strip()
+                    logger.info("=== Response Processing ===")
+                    logger.info(f"🧹 Cleaned response length: {len(cleaned_response)}")
+                    logger.debug(f"📝 Cleaned response preview: {cleaned_response[:100]}...")
+                    
+                    return (cleaned_response, search_results)
+                else:
+                    logger.error("❌ Search returned empty results")
+                    logger.error("=== Search Operation Failed ===")
+                    
+        except Exception as e:
+            logger.error("=== Search Error Details ===")
+            logger.error(f"❌ Error type: {type(e).__name__}")
+            logger.error(f"❌ Error message: {str(e)}")
+            logger.error(f"❌ Failed query: {search_query}")
+            logger.error("=== End Error Details ===")
+            
+        return None
