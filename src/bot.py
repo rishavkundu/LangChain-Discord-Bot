@@ -228,7 +228,8 @@ async def on_message(message):
                 )
 
                 if ai_response:
-                    ai_response = f"<@{message.author.name}> {ai_response}"
+                    # Use proper Discord mention format with user ID
+                    ai_response = f"<@{message.author.id}> {ai_response}"
 
                 # Update emotional state
                 await emotional_state_manager.analyze_message(
