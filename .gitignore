@@ -1,3 +1,5 @@
 .env
 .chroma
 .venv
+__pycache__
+user_notes
