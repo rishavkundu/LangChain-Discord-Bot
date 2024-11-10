@@ -5,6 +5,8 @@ from datetime import datetime
 import aiosqlite
 from typing import Dict, Any, List, Optional
 
+from src.config import CONTEXT_DECAY_HOURS
+
 class DatabaseManager:
     def __init__(self, db_path: str = "bot_context.db"):
         self.db_path = db_path
@@ -77,19 +79,22 @@ class DatabaseManager:
         """Retrieve conversation context for a channel."""
         async with aiosqlite.connect(self.db_path) as db:
             async with db.execute("""
-                SELECT content, role, timestamp, user_id
+                SELECT content, role, timestamp, user_id,
+                       LAG(timestamp) OVER (ORDER BY timestamp) as prev_timestamp
                 FROM messages
-                WHERE channel_id = ?
+                WHERE channel_id = ? AND 
+                      timestamp >= datetime('now', '-' || ? || ' hours')
                 ORDER BY timestamp DESC
                 LIMIT ?
-            """, (channel_id, limit)) as cursor:
+            """, (channel_id, CONTEXT_DECAY_HOURS, limit)) as cursor:
                 messages = await cursor.fetchall()
                 
                 return [{
                     "content": msg[0],
                     "role": msg[1],
                     "timestamp": datetime.fromisoformat(msg[2]),
-                    "user_id": msg[3]
+                    "user_id": msg[3],
+                    "time_gap": (datetime.fromisoformat(msg[2]) - datetime.fromisoformat(msg[4])).total_seconds() if msg[4] else None
                 } for msg in reversed(messages)]
 
     async def update_user_profile(self, user_id: str, interests: set) -> None:

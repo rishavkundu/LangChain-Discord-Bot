@@ -193,3 +193,28 @@ async def fetch_completion_with_hermes(
     except Exception as e:
         logger.error(f"Error in fetch_completion: {str(e)}", exc_info=True)
         return None
+
+def format_context_messages(messages: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+    formatted_messages = []
+    current_topic = []
+    
+    for msg in messages:
+        # Start new topic if significant time gap (> 5 minutes)
+        if msg.get('time_gap') and msg['time_gap'] > 300:
+            if current_topic:
+                formatted_messages.append({
+                    "role": "system",
+                    "content": "New conversation topic started."
+                })
+        
+        # Format message with proper spacing and punctuation
+        content = msg['content'].strip()
+        if not content.endswith(('.', '!', '?')):
+            content += '.'
+            
+        formatted_messages.append({
+            "role": msg['role'],
+            "content": content
+        })
+    
+    return formatted_messages
