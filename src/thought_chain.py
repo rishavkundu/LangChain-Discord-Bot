@@ -31,7 +31,7 @@ class ThoughtChainManager:
         Determines whether to start or continue a thought chain based on message content.
         """
         # Triggers that encourage starting a thought chain
-        triggers = ['why', 'how', 'what if', 'imagine', 'think', '?', '...']
+        triggers = ['why', 'how', 'what if', 'imagine', 'wonder', 'consider', 'believe', 'ask', '!', 'cool', 'think', '?', '...']
         return any(trigger in message_content.lower() for trigger in triggers)
             
     async def maybe_start_chain(self, channel_id: str, message: str, response: str) -> bool:
@@ -42,7 +42,7 @@ class ThoughtChainManager:
             current_time = datetime.now()
             if channel_id in self._last_chain_time:
                 time_since_last = current_time - self._last_chain_time[channel_id]
-                if time_since_last < timedelta(minutes=5):
+                if time_since_last < timedelta(minutes=1):
                     return False  # Prevents starting chains too frequently
                 
             if self.should_continue_chain(message):

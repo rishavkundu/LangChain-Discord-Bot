@@ -9378,3 +9378,790 @@ Based on this search data: "The launch date for S...
 2024-11-10 15:20:14,768 [INFO] src.bot (bot.py:159): ✨ Response processed and sent in 2.28ms
 2024-11-10 15:20:14,781 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2290.05ms
 2024-11-10 15:20:14,781 [INFO] src.bot (bot.py:366): ✨ Message sent successfully
+2024-11-10 15:20:51,148 [INFO] src.bot (bot.py:354): 🤔 Cleo is processing a response to: , try using it again. the results of the 2024 us e...
+2024-11-10 15:20:51,149 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:20:51,151 [INFO] src.api_client (api_client.py:169): Making API request with prompt: , try using it again. the results of the 2024 us e...
+2024-11-10 15:21:16,120 [INFO] src.bot (bot.py:354): 🤔 Cleo is processing a response to: , try using your search again. the results of the ...
+2024-11-10 15:21:16,120 [INFO] src.bot (bot.py:80): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:21:16,124 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this user request: ", try using your sea...
+2024-11-10 15:21:22,228 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:21:22,229 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:21:22,229 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: official results of the 2024 united states preside...
+2024-11-10 15:21:22,230 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("official results of the 2024 united states presidential election")...
+2024-11-10 15:21:22,230 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:21:22,230 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:21:22,231 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:21:22,231 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: official results of the 2024 united states preside...
+2024-11-10 15:21:22,231 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:21:22,231 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:21:22,232 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:21:22,232 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:21:22,446 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 213.69ms
+2024-11-10 15:21:29,578 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:21:29,579 [INFO] src.bot (bot.py:131): ✨ LLM response received successfully
+2024-11-10 15:21:29,579 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 38431.05ms
+2024-11-10 15:21:29,579 [INFO] src.bot (bot.py:146): 🔄 Starting response processing...
+2024-11-10 15:21:31,765 [INFO] src.bot (bot.py:159): ✨ Response processed and sent in 2.19ms
+2024-11-10 15:21:31,778 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2198.69ms
+2024-11-10 15:21:31,778 [INFO] src.bot (bot.py:366): ✨ Message sent successfully
+2024-11-10 15:21:35,198 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:21:35,198 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1381 characters
+2024-11-10 15:21:35,199 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:21:35,199 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 12967.73ms
+2024-11-10 15:21:35,200 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:21:35,200 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 12968.73ms
+2024-11-10 15:21:35,200 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1381 characters
+2024-11-10 15:21:35,201 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:21:35,201 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:21:35,201 [INFO] src.bot (bot.py:107): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:21:35,202 [INFO] src.bot (bot.py:122): 🔄 Generating augmented response with search data...
+2024-11-10 15:21:35,208 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this search data: "The official results ...
+2024-11-10 15:22:42,053 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:22:42,054 [INFO] src.bot (bot.py:125): ✨ Augmented response generated successfully
+2024-11-10 15:22:42,054 [INFO] src.bot (bot.py:146): 🔄 Starting response processing...
+2024-11-10 15:22:44,172 [INFO] src.bot (bot.py:159): ✨ Response processed and sent in 2.12ms
+2024-11-10 15:22:44,184 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2130.24ms
+2024-11-10 15:22:44,184 [INFO] src.bot (bot.py:366): ✨ Message sent successfully
+2024-11-10 15:23:15,288 [INFO] src.bot (bot.py:354): 🤔 Cleo is processing a response to: can you double check that with another search? i t...
+2024-11-10 15:23:15,289 [INFO] src.bot (bot.py:80): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:23:15,292 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this user request: "can you double check...
+2024-11-10 15:23:26,682 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:23:26,683 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:23:26,684 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: final results of the 2024 US presidential election...
+2024-11-10 15:23:26,684 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("final results of the 2024 US presidential election")...
+2024-11-10 15:23:26,684 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:23:26,685 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:23:26,685 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:23:26,685 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: final results of the 2024 US presidential election...
+2024-11-10 15:23:26,686 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:23:26,686 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:23:26,686 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:23:26,686 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:23:27,409 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 722.57ms
+2024-11-10 15:23:39,523 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:23:39,523 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1156 characters
+2024-11-10 15:23:39,524 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:23:39,524 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 12838.27ms
+2024-11-10 15:23:39,525 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:23:39,525 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 12840.26ms
+2024-11-10 15:23:39,525 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1156 characters
+2024-11-10 15:23:39,526 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:23:39,526 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:23:39,526 [INFO] src.bot (bot.py:107): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:23:39,527 [INFO] src.bot (bot.py:122): 🔄 Generating augmented response with search data...
+2024-11-10 15:23:39,529 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this search data: "The 2024 US president...
+2024-11-10 15:24:23,514 [INFO] src.bot (bot.py:312): === System Metrics ===
+2024-11-10 15:24:23,514 [INFO] src.bot (bot.py:313): Uptime: 0:05:03.703273
+2024-11-10 15:24:23,514 [INFO] src.bot (bot.py:314): CPU Usage: 8.1%
+2024-11-10 15:24:23,515 [INFO] src.bot (bot.py:315): Memory Usage: 45.7%
+2024-11-10 15:24:23,515 [INFO] src.bot (bot.py:316): Active Threads: 3
+2024-11-10 15:24:23,515 [INFO] src.bot (bot.py:317): Messages Processed: 0
+2024-11-10 15:24:23,516 [INFO] src.bot (bot.py:318): Commands Processed: 0
+2024-11-10 15:24:23,516 [INFO] src.bot (bot.py:319): Searches Performed: 3
+2024-11-10 15:24:23,516 [INFO] src.bot (bot.py:320): Error Count: 0
+2024-11-10 15:24:23,517 [INFO] src.bot (bot.py:321): ===================
+2024-11-10 15:24:55,782 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:24:55,783 [INFO] src.bot (bot.py:125): ✨ Augmented response generated successfully
+2024-11-10 15:24:55,783 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 100494.10ms
+2024-11-10 15:24:55,784 [INFO] src.bot (bot.py:146): 🔄 Starting response processing...
+2024-11-10 15:24:57,906 [INFO] src.bot (bot.py:159): ✨ Response processed and sent in 2.12ms
+2024-11-10 15:24:57,919 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2135.03ms
+2024-11-10 15:24:57,920 [INFO] src.bot (bot.py:366): ✨ Message sent successfully
+2024-11-10 15:25:45,809 [INFO] src.bot (bot.py:354): 🤔 Cleo is processing a response to: , can you search for information about the nvidia ...
+2024-11-10 15:25:45,809 [INFO] src.bot (bot.py:80): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:25:45,813 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this user request: ", can you search for...
+2024-11-10 15:25:51,007 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:25:51,007 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:25:51,008 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: nvidia rubin lineup details and specs, including R...
+2024-11-10 15:25:51,008 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("nvidia rubin lineup details and specs, including R100 model")...
+2024-11-10 15:25:51,008 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:25:51,009 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:25:51,009 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:25:51,009 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: nvidia rubin lineup details and specs, including R...
+2024-11-10 15:25:51,010 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:25:51,011 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:25:51,011 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:25:51,011 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:25:52,065 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 1054.50ms
+2024-11-10 15:26:08,432 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:26:08,432 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1398 characters
+2024-11-10 15:26:08,433 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:26:08,433 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 17422.11ms
+2024-11-10 15:26:08,434 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:26:08,434 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 17424.25ms
+2024-11-10 15:26:08,434 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1398 characters
+2024-11-10 15:26:08,435 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:26:08,435 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:26:08,435 [INFO] src.bot (bot.py:107): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:26:08,435 [INFO] src.bot (bot.py:122): 🔄 Generating augmented response with search data...
+2024-11-10 15:26:08,437 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this search data: "The NVIDIA Rubin line...
+2024-11-10 15:27:12,051 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:27:12,051 [INFO] src.bot (bot.py:125): ✨ Augmented response generated successfully
+2024-11-10 15:27:12,052 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 86242.15ms
+2024-11-10 15:27:12,052 [INFO] src.bot (bot.py:146): 🔄 Starting response processing...
+2024-11-10 15:27:14,154 [INFO] src.bot (bot.py:159): ✨ Response processed and sent in 2.10ms
+2024-11-10 15:27:14,167 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2115.15ms
+2024-11-10 15:27:14,167 [INFO] src.bot (bot.py:366): ✨ Message sent successfully
+2024-11-10 15:28:09,686 [INFO] src.bot (bot.py:354): 🤔 Cleo is processing a response to: sick, i heard nous research released this new thin...
+2024-11-10 15:28:09,686 [INFO] src.bot (bot.py:80): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:28:09,689 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this user request: "sick, i heard nous r...
+2024-11-10 15:28:15,751 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:28:15,752 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:28:15,752 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: latest details on nous research's releases of nous...
+2024-11-10 15:28:15,752 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("latest details on nous research's releases of nous chat and the forge api")...
+2024-11-10 15:28:15,753 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:28:15,753 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:28:15,753 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:28:15,753 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: latest details on nous research's releases of nous...
+2024-11-10 15:28:15,754 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:28:15,754 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:28:15,754 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:28:15,754 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:28:16,832 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 1076.68ms
+2024-11-10 15:28:31,797 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:28:31,797 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1465 characters
+2024-11-10 15:28:31,798 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:28:31,798 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 16043.28ms
+2024-11-10 15:28:31,798 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:28:31,799 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 16044.28ms
+2024-11-10 15:28:31,799 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1465 characters
+2024-11-10 15:28:31,799 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:28:31,799 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:28:31,800 [INFO] src.bot (bot.py:107): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:28:31,800 [INFO] src.bot (bot.py:122): 🔄 Generating augmented response with search data...
+2024-11-10 15:28:31,802 [INFO] src.api_client (api_client.py:169): Making API request with prompt: 
+Based on this search data: "The latest details on...
+2024-11-10 15:29:07,070 [INFO] src.api_client (api_client.py:181): API request successful
+2024-11-10 15:29:07,071 [INFO] src.bot (bot.py:125): ✨ Augmented response generated successfully
+2024-11-10 15:29:07,071 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 57384.77ms
+2024-11-10 15:29:07,072 [INFO] src.bot (bot.py:146): 🔄 Starting response processing...
+2024-11-10 15:29:09,208 [INFO] src.bot (bot.py:159): ✨ Response processed and sent in 2.14ms
+2024-11-10 15:29:09,220 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2148.85ms
+2024-11-10 15:29:09,220 [INFO] src.bot (bot.py:366): ✨ Message sent successfully
+2024-11-10 15:29:23,532 [INFO] src.bot (bot.py:312): === System Metrics ===
+2024-11-10 15:29:23,533 [INFO] src.bot (bot.py:313): Uptime: 0:10:03.723028
+2024-11-10 15:29:23,533 [INFO] src.bot (bot.py:314): CPU Usage: 5.9%
+2024-11-10 15:29:23,533 [INFO] src.bot (bot.py:315): Memory Usage: 45.4%
+2024-11-10 15:29:23,534 [INFO] src.bot (bot.py:316): Active Threads: 3
+2024-11-10 15:29:23,534 [INFO] src.bot (bot.py:317): Messages Processed: 0
+2024-11-10 15:29:23,534 [INFO] src.bot (bot.py:318): Commands Processed: 0
+2024-11-10 15:29:23,535 [INFO] src.bot (bot.py:319): Searches Performed: 5
+2024-11-10 15:29:23,535 [INFO] src.bot (bot.py:320): Error Count: 0
+2024-11-10 15:29:23,535 [INFO] src.bot (bot.py:321): ===================
+2024-11-10 15:34:18,482 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:34:18,483 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:34:19,601 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: fcdd999cc619b325e83a4960f59fbd25).
+2024-11-10 15:34:22,154 [INFO] src.bot (bot.py:307): === Cleo Bot Initialization ===
+2024-11-10 15:34:22,155 [INFO] src.bot (bot.py:308): Bot User: Cleo#0095
+2024-11-10 15:34:22,155 [INFO] src.bot (bot.py:309): Bot ID: 1227275747454877737
+2024-11-10 15:34:22,156 [INFO] src.bot (bot.py:310): Discord.py Version: 2.4.0
+2024-11-10 15:34:22,156 [INFO] src.bot (bot.py:311): Python Version: 3.12.5
+2024-11-10 15:34:22,156 [INFO] src.bot (bot.py:312): Platform: Windows 10
+2024-11-10 15:34:22,157 [INFO] src.bot (bot.py:313): === Initialization Complete ===
+2024-11-10 15:34:22,159 [INFO] src.bot (bot.py:52): Database initialized successfully
+2024-11-10 15:34:22,306 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:34:22,307 [INFO] src.bot (bot.py:328): Uptime: 0:00:03.821071
+2024-11-10 15:34:22,307 [INFO] src.bot (bot.py:329): CPU Usage: 18.8%
+2024-11-10 15:34:22,308 [INFO] src.bot (bot.py:330): Memory Usage: 45.8%
+2024-11-10 15:34:22,308 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:34:22,308 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:34:22,308 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:34:22,309 [INFO] src.bot (bot.py:334): Searches Performed: 0
+2024-11-10 15:34:22,309 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:34:22,309 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:35:35,390 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:35:35,392 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:35:36,014 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: ffdc3125cfbd5d20a5f6acd12ced20b1).
+2024-11-10 15:35:38,573 [INFO] src.bot (bot.py:307): === Cleo Bot Initialization ===
+2024-11-10 15:35:38,573 [INFO] src.bot (bot.py:308): Bot User: Cleo#0095
+2024-11-10 15:35:38,574 [INFO] src.bot (bot.py:309): Bot ID: 1227275747454877737
+2024-11-10 15:35:38,574 [INFO] src.bot (bot.py:310): Discord.py Version: 2.4.0
+2024-11-10 15:35:38,574 [INFO] src.bot (bot.py:311): Python Version: 3.12.5
+2024-11-10 15:35:38,574 [INFO] src.bot (bot.py:312): Platform: Windows 10
+2024-11-10 15:35:38,575 [INFO] src.bot (bot.py:313): === Initialization Complete ===
+2024-11-10 15:35:38,576 [INFO] src.bot (bot.py:52): Database initialized successfully
+2024-11-10 15:35:38,754 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:35:38,754 [INFO] src.bot (bot.py:328): Uptime: 0:00:03.358890
+2024-11-10 15:35:38,755 [INFO] src.bot (bot.py:329): CPU Usage: 20.9%
+2024-11-10 15:35:38,755 [INFO] src.bot (bot.py:330): Memory Usage: 45.9%
+2024-11-10 15:35:38,755 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:35:38,756 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:35:38,756 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:35:38,756 [INFO] src.bot (bot.py:334): Searches Performed: 0
+2024-11-10 15:35:38,756 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:35:38,756 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:36:10,993 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:36:10,995 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:36:11,626 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 2570ca50fce6e2cf229db648e8f4658c).
+2024-11-10 15:36:14,185 [INFO] src.bot (bot.py:307): === Cleo Bot Initialization ===
+2024-11-10 15:36:14,185 [INFO] src.bot (bot.py:308): Bot User: Cleo#0095
+2024-11-10 15:36:14,186 [INFO] src.bot (bot.py:309): Bot ID: 1227275747454877737
+2024-11-10 15:36:14,186 [INFO] src.bot (bot.py:310): Discord.py Version: 2.4.0
+2024-11-10 15:36:14,186 [INFO] src.bot (bot.py:311): Python Version: 3.12.5
+2024-11-10 15:36:14,186 [INFO] src.bot (bot.py:312): Platform: Windows 10
+2024-11-10 15:36:14,187 [INFO] src.bot (bot.py:313): === Initialization Complete ===
+2024-11-10 15:36:14,189 [INFO] src.bot (bot.py:52): Database initialized successfully
+2024-11-10 15:36:14,293 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:36:14,293 [INFO] src.bot (bot.py:328): Uptime: 0:00:03.295162
+2024-11-10 15:36:14,294 [INFO] src.bot (bot.py:329): CPU Usage: 13.2%
+2024-11-10 15:36:14,294 [INFO] src.bot (bot.py:330): Memory Usage: 45.7%
+2024-11-10 15:36:14,294 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:36:14,294 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:36:14,295 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:36:14,295 [INFO] src.bot (bot.py:334): Searches Performed: 0
+2024-11-10 15:36:14,295 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:36:14,296 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:36:15,594 [INFO] src.bot (bot.py:369): 🤔 Cleo is processing a response to: hello...
+2024-11-10 15:36:15,595 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:36:15,598 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Analyze this request: "hello"
+If it involves any ...
+2024-11-10 15:36:25,910 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:36:25,910 [INFO] src.bot (bot.py:146): ✨ LLM response received successfully
+2024-11-10 15:36:25,911 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 10315.47ms
+2024-11-10 15:36:25,911 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:36:28,196 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 2.29ms
+2024-11-10 15:36:28,210 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2299.57ms
+2024-11-10 15:36:28,210 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:37:08,042 [INFO] src.bot (bot.py:369): 🤔 Cleo is processing a response to: sonar search for the launch date ofr starship 6...
+2024-11-10 15:37:08,043 [INFO] src.bot (bot.py:80): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:37:08,046 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this user request: "sonar search for the...
+2024-11-10 15:37:14,597 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:37:14,597 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:37:14,597 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: launch date for spacex starship 6...
+2024-11-10 15:37:14,598 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("launch date for spacex starship 6")...
+2024-11-10 15:37:14,599 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:37:14,599 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:37:14,600 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:37:14,600 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: launch date for spacex starship 6...
+2024-11-10 15:37:14,600 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:37:14,600 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:37:14,601 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:37:14,601 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:37:14,851 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 249.51ms
+2024-11-10 15:37:18,282 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:37:18,283 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 141 characters
+2024-11-10 15:37:18,283 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:37:18,283 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 3682.82ms
+2024-11-10 15:37:18,284 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:37:18,284 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 3683.82ms
+2024-11-10 15:37:18,284 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 141 characters
+2024-11-10 15:37:18,285 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:37:18,285 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:37:18,285 [INFO] src.bot (bot.py:122): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:37:18,285 [INFO] src.bot (bot.py:137): 🔄 Generating augmented response with search data...
+2024-11-10 15:37:18,287 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "The launch date for S...
+2024-11-10 15:38:04,333 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:38:04,333 [INFO] src.bot (bot.py:140): ✨ Augmented response generated successfully
+2024-11-10 15:38:04,334 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 56290.60ms
+2024-11-10 15:38:04,334 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:38:06,463 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 2.13ms
+2024-11-10 15:38:06,468 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2134.11ms
+2024-11-10 15:38:06,468 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:41:14,307 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:41:14,307 [INFO] src.bot (bot.py:328): Uptime: 0:05:03.309102
+2024-11-10 15:41:14,307 [INFO] src.bot (bot.py:329): CPU Usage: 6.5%
+2024-11-10 15:41:14,307 [INFO] src.bot (bot.py:330): Memory Usage: 45.2%
+2024-11-10 15:41:14,308 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:41:14,308 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:41:14,308 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:41:14,308 [INFO] src.bot (bot.py:334): Searches Performed: 1
+2024-11-10 15:41:14,308 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:41:14,309 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:45:27,536 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:45:27,537 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:45:28,452 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: e4b8dd6006c1fa2d2bdd2a034ee5d4e3).
+2024-11-10 15:45:31,334 [INFO] src.bot (bot.py:307): === Cleo Bot Initialization ===
+2024-11-10 15:45:31,335 [INFO] src.bot (bot.py:308): Bot User: Cleo#0095
+2024-11-10 15:45:31,335 [INFO] src.bot (bot.py:309): Bot ID: 1227275747454877737
+2024-11-10 15:45:31,335 [INFO] src.bot (bot.py:310): Discord.py Version: 2.4.0
+2024-11-10 15:45:31,336 [INFO] src.bot (bot.py:311): Python Version: 3.12.5
+2024-11-10 15:45:31,336 [INFO] src.bot (bot.py:312): Platform: Windows 10
+2024-11-10 15:45:31,336 [INFO] src.bot (bot.py:313): === Initialization Complete ===
+2024-11-10 15:45:31,338 [INFO] src.bot (bot.py:52): Database initialized successfully
+2024-11-10 15:45:31,456 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:45:31,456 [INFO] src.bot (bot.py:328): Uptime: 0:00:03.915792
+2024-11-10 15:45:31,456 [INFO] src.bot (bot.py:329): CPU Usage: 14.4%
+2024-11-10 15:45:31,457 [INFO] src.bot (bot.py:330): Memory Usage: 46.2%
+2024-11-10 15:45:31,457 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:45:31,457 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:45:31,458 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:45:31,458 [INFO] src.bot (bot.py:334): Searches Performed: 0
+2024-11-10 15:45:31,458 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:45:31,459 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:46:01,037 [INFO] src.bot (bot.py:369): �� Cleo is processing a response to: *...
+2024-11-10 15:46:01,037 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:46:01,040 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Analyze this request: "*"
+If it involves any of t...
+2024-11-10 15:46:12,661 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:46:12,662 [INFO] src.bot (bot.py:146): ✨ LLM response received successfully
+2024-11-10 15:46:12,662 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 11625.01ms
+2024-11-10 15:46:12,662 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:46:14,794 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 2.13ms
+2024-11-10 15:46:14,806 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2143.48ms
+2024-11-10 15:46:14,807 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:46:25,890 [INFO] src.bot (bot.py:369): �� Cleo is processing a response to: say more...
+2024-11-10 15:46:25,890 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:46:25,893 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Analyze this request: "say more"
+If it involves a...
+2024-11-10 15:46:45,823 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:46:45,824 [INFO] src.bot (bot.py:146): ✨ LLM response received successfully
+2024-11-10 15:46:45,824 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 19933.75ms
+2024-11-10 15:46:45,824 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:46:47,886 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 2.06ms
+2024-11-10 15:46:47,899 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2074.02ms
+2024-11-10 15:46:47,899 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:46:56,561 [INFO] src.bot (bot.py:369): �� Cleo is processing a response to: .....
+2024-11-10 15:46:56,561 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:46:56,564 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Analyze this request: ".."
+If it involves any of ...
+2024-11-10 15:47:16,599 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:47:16,599 [INFO] src.bot (bot.py:146): ✨ LLM response received successfully
+2024-11-10 15:47:16,599 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 20037.79ms
+2024-11-10 15:47:16,599 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:47:18,726 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 2.13ms
+2024-11-10 15:47:18,738 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2138.03ms
+2024-11-10 15:47:18,738 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:48:31,122 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:48:31,124 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:48:31,661 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: c4d92fb6c1a17af1a49425ee5045f602).
+2024-11-10 15:48:34,223 [INFO] src.bot (bot.py:307): === Cleo Bot Initialization ===
+2024-11-10 15:48:34,224 [INFO] src.bot (bot.py:308): Bot User: Cleo#0095
+2024-11-10 15:48:34,224 [INFO] src.bot (bot.py:309): Bot ID: 1227275747454877737
+2024-11-10 15:48:34,224 [INFO] src.bot (bot.py:310): Discord.py Version: 2.4.0
+2024-11-10 15:48:34,225 [INFO] src.bot (bot.py:311): Python Version: 3.12.5
+2024-11-10 15:48:34,225 [INFO] src.bot (bot.py:312): Platform: Windows 10
+2024-11-10 15:48:34,225 [INFO] src.bot (bot.py:313): === Initialization Complete ===
+2024-11-10 15:48:34,228 [INFO] src.bot (bot.py:52): Database initialized successfully
+2024-11-10 15:48:34,366 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:48:34,366 [INFO] src.bot (bot.py:328): Uptime: 0:00:03.238701
+2024-11-10 15:48:34,366 [INFO] src.bot (bot.py:329): CPU Usage: 8.6%
+2024-11-10 15:48:34,367 [INFO] src.bot (bot.py:330): Memory Usage: 46.0%
+2024-11-10 15:48:34,367 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:48:34,367 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:48:34,367 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:48:34,368 [INFO] src.bot (bot.py:334): Searches Performed: 0
+2024-11-10 15:48:34,368 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:48:34,368 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:50:46,267 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:50:46,268 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:50:46,990 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: bd134bb3d53965a02ad6432a610a349a).
+2024-11-10 15:50:49,562 [INFO] src.bot (bot.py:307): === Cleo Bot Initialization ===
+2024-11-10 15:50:49,563 [INFO] src.bot (bot.py:308): Bot User: Cleo#0095
+2024-11-10 15:50:49,563 [INFO] src.bot (bot.py:309): Bot ID: 1227275747454877737
+2024-11-10 15:50:49,564 [INFO] src.bot (bot.py:310): Discord.py Version: 2.4.0
+2024-11-10 15:50:49,564 [INFO] src.bot (bot.py:311): Python Version: 3.12.5
+2024-11-10 15:50:49,564 [INFO] src.bot (bot.py:312): Platform: Windows 10
+2024-11-10 15:50:49,564 [INFO] src.bot (bot.py:313): === Initialization Complete ===
+2024-11-10 15:50:49,567 [INFO] src.bot (bot.py:52): Database initialized successfully
+2024-11-10 15:50:49,705 [INFO] src.bot (bot.py:327): === System Metrics ===
+2024-11-10 15:50:49,706 [INFO] src.bot (bot.py:328): Uptime: 0:00:03.435015
+2024-11-10 15:50:49,706 [INFO] src.bot (bot.py:329): CPU Usage: 13.7%
+2024-11-10 15:50:49,707 [INFO] src.bot (bot.py:330): Memory Usage: 46.0%
+2024-11-10 15:50:49,707 [INFO] src.bot (bot.py:331): Active Threads: 3
+2024-11-10 15:50:49,707 [INFO] src.bot (bot.py:332): Messages Processed: 0
+2024-11-10 15:50:49,708 [INFO] src.bot (bot.py:333): Commands Processed: 0
+2024-11-10 15:50:49,708 [INFO] src.bot (bot.py:334): Searches Performed: 0
+2024-11-10 15:50:49,708 [INFO] src.bot (bot.py:335): Error Count: 0
+2024-11-10 15:50:49,708 [INFO] src.bot (bot.py:336): ===================
+2024-11-10 15:50:58,698 [INFO] src.bot (bot.py:369): �� Cleo is processing a response to: say soemthing with consider in the response...
+2024-11-10 15:50:58,698 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:50:58,701 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Analyze this request: "say soemthing with conside...
+2024-11-10 15:51:24,886 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:51:24,887 [INFO] src.bot (bot.py:146): ✨ LLM response received successfully
+2024-11-10 15:51:24,887 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 26188.06ms
+2024-11-10 15:51:24,887 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:51:26,031 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 1.14ms
+2024-11-10 15:51:26,037 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1149.70ms
+2024-11-10 15:51:26,037 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:54:02,235 [INFO] src.bot (bot.py:369): �� Cleo is processing a response to: did you know that you are running on hermes?...
+2024-11-10 15:54:02,236 [INFO] src.bot (bot.py:94): 🔄 Queuing request to Hermes LLM...
+2024-11-10 15:54:02,239 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Analyze this request: "did you know that you are ...
+2024-11-10 15:54:32,545 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:54:32,546 [INFO] src.bot (bot.py:146): ✨ LLM response received successfully
+2024-11-10 15:54:32,546 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 30311.15ms
+2024-11-10 15:54:32,546 [INFO] src.bot (bot.py:161): 🔄 Starting response processing...
+2024-11-10 15:54:33,681 [INFO] src.bot (bot.py:174): ✨ Response processed and sent in 1.13ms
+2024-11-10 15:54:33,687 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1140.13ms
+2024-11-10 15:54:33,687 [INFO] src.bot (bot.py:381): ✨ Message sent successfully
+2024-11-10 15:54:37,246 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 15:54:37,247 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 15:54:37,934 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 761ded442887a9b704a1d5eb630e1897).
+2024-11-10 15:54:40,494 [INFO] src.bot (bot.py:312): === Cleo Bot Initialization ===
+2024-11-10 15:54:40,494 [INFO] src.bot (bot.py:313): Bot User: Cleo#0095
+2024-11-10 15:54:40,494 [INFO] src.bot (bot.py:314): Bot ID: 1227275747454877737
+2024-11-10 15:54:40,495 [INFO] src.bot (bot.py:315): Discord.py Version: 2.4.0
+2024-11-10 15:54:40,495 [INFO] src.bot (bot.py:316): Python Version: 3.12.5
+2024-11-10 15:54:40,495 [INFO] src.bot (bot.py:317): Platform: Windows 10
+2024-11-10 15:54:40,496 [INFO] src.bot (bot.py:318): === Initialization Complete ===
+2024-11-10 15:54:40,499 [INFO] src.bot (bot.py:53): Database initialized successfully
+2024-11-10 15:54:40,640 [INFO] src.bot (bot.py:332): === System Metrics ===
+2024-11-10 15:54:40,640 [INFO] src.bot (bot.py:333): Uptime: 0:00:03.389532
+2024-11-10 15:54:40,641 [INFO] src.bot (bot.py:334): CPU Usage: 9.4%
+2024-11-10 15:54:40,641 [INFO] src.bot (bot.py:335): Memory Usage: 46.2%
+2024-11-10 15:54:40,641 [INFO] src.bot (bot.py:336): Active Threads: 3
+2024-11-10 15:54:40,641 [INFO] src.bot (bot.py:337): Messages Processed: 0
+2024-11-10 15:54:40,642 [INFO] src.bot (bot.py:338): Commands Processed: 0
+2024-11-10 15:54:40,642 [INFO] src.bot (bot.py:339): Searches Performed: 0
+2024-11-10 15:54:40,642 [INFO] src.bot (bot.py:340): Error Count: 0
+2024-11-10 15:54:40,642 [INFO] src.bot (bot.py:341): ===================
+2024-11-10 15:55:18,893 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: search for what ACT I is related to discord bots...
+2024-11-10 15:55:18,894 [INFO] src.bot (bot.py:81): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:55:18,894 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Based on this user request: "search f...
+2024-11-10 15:55:19,878 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 15:55:19,879 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:55:19,879 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: Discord bots and their use in ACT I, specifically ...
+2024-11-10 15:55:19,880 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("Discord bots and their use in ACT I, specifically discussing bot commands, integration, and f...
+2024-11-10 15:55:19,881 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:55:19,881 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:55:19,881 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:55:19,881 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: Discord bots and their use in ACT I, specifically ...
+2024-11-10 15:55:19,882 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:55:19,882 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:55:19,882 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:55:19,882 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:55:20,912 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 1028.29ms
+2024-11-10 15:55:34,664 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:55:34,664 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1493 characters
+2024-11-10 15:55:34,665 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:55:34,665 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 14781.90ms
+2024-11-10 15:55:34,665 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:55:34,666 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 14783.89ms
+2024-11-10 15:55:34,666 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1493 characters
+2024-11-10 15:55:34,666 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:55:34,666 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:55:34,667 [INFO] src.bot (bot.py:127): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:55:34,667 [INFO] src.bot (bot.py:142): 🔄 Generating augmented response with search data...
+2024-11-10 15:55:34,670 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "Discord bots can be i...
+2024-11-10 15:56:23,078 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:56:23,078 [INFO] src.bot (bot.py:145): ✨ Augmented response generated successfully
+2024-11-10 15:56:23,079 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 64185.27ms
+2024-11-10 15:56:23,079 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 15:56:24,243 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.16ms
+2024-11-10 15:56:24,255 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1176.04ms
+2024-11-10 15:56:24,256 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 15:56:39,294 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: search for the documentation of the Hermes 3 finet...
+2024-11-10 15:56:39,294 [INFO] src.bot (bot.py:81): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:56:39,295 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Based on this user request: "search f...
+2024-11-10 15:56:43,144 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 15:56:43,144 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:56:43,145 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: query...
+2024-11-10 15:56:43,145 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: Given the user request to "search for the documentation of Hermes 3 finetune and find the special ta...
+2024-11-10 15:56:43,145 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:56:43,146 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:56:43,146 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:56:43,146 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: query...
+2024-11-10 15:56:43,146 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:56:43,147 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:56:43,147 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:56:43,147 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:56:43,335 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 187.51ms
+2024-11-10 15:56:54,770 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:56:54,770 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1369 characters
+2024-11-10 15:56:54,770 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:56:54,771 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 11622.99ms
+2024-11-10 15:56:54,771 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:56:54,772 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 11624.98ms
+2024-11-10 15:56:54,772 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1369 characters
+2024-11-10 15:56:54,772 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:56:54,773 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 341
+2024-11-10 15:56:54,773 [INFO] src.bot (bot.py:127): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:56:54,773 [INFO] src.bot (bot.py:142): 🔄 Generating augmented response with search data...
+2024-11-10 15:56:54,776 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "A **query** has sever...
+2024-11-10 15:57:55,545 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:57:55,546 [INFO] src.bot (bot.py:145): ✨ Augmented response generated successfully
+2024-11-10 15:57:55,546 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 76251.51ms
+2024-11-10 15:57:55,546 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 15:57:56,633 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.09ms
+2024-11-10 15:57:56,638 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1091.89ms
+2024-11-10 15:57:56,639 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 15:58:27,210 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , can you check online to see if nous research has...
+2024-11-10 15:58:27,211 [INFO] src.bot (bot.py:81): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 15:58:27,211 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Based on this user request: ", can yo...
+2024-11-10 15:58:28,441 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 15:58:28,441 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 15:58:28,442 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: nous research merchandise or products for sale onl...
+2024-11-10 15:58:28,442 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("nous research merchandise or products for sale online")...
+2024-11-10 15:58:28,443 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 15:58:28,443 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 15:58:28,443 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 15:58:28,443 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: nous research merchandise or products for sale onl...
+2024-11-10 15:58:28,444 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 15:58:28,444 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 15:58:28,444 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 15:58:28,444 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 15:58:28,647 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 201.39ms
+2024-11-10 15:58:38,714 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 15:58:38,714 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 991 characters
+2024-11-10 15:58:38,715 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 15:58:38,715 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 10269.35ms
+2024-11-10 15:58:38,715 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 15:58:38,716 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 10271.34ms
+2024-11-10 15:58:38,716 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 991 characters
+2024-11-10 15:58:38,716 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 15:58:38,717 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 15:58:38,717 [INFO] src.bot (bot.py:127): 🔍 Sonar search detected, processing search results...
+2024-11-10 15:58:38,717 [INFO] src.bot (bot.py:142): 🔄 Generating augmented response with search data...
+2024-11-10 15:58:38,720 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "Nous Research offers ...
+2024-11-10 15:59:25,562 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 15:59:25,562 [INFO] src.bot (bot.py:145): ✨ Augmented response generated successfully
+2024-11-10 15:59:25,563 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 58352.72ms
+2024-11-10 15:59:25,563 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 15:59:26,656 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.09ms
+2024-11-10 15:59:26,668 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1105.15ms
+2024-11-10 15:59:26,669 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 15:59:40,641 [INFO] src.bot (bot.py:332): === System Metrics ===
+2024-11-10 15:59:40,642 [INFO] src.bot (bot.py:333): Uptime: 0:05:03.391111
+2024-11-10 15:59:40,642 [INFO] src.bot (bot.py:334): CPU Usage: 7.2%
+2024-11-10 15:59:40,643 [INFO] src.bot (bot.py:335): Memory Usage: 46.1%
+2024-11-10 15:59:40,643 [INFO] src.bot (bot.py:336): Active Threads: 3
+2024-11-10 15:59:40,643 [INFO] src.bot (bot.py:337): Messages Processed: 0
+2024-11-10 15:59:40,643 [INFO] src.bot (bot.py:338): Commands Processed: 0
+2024-11-10 15:59:40,644 [INFO] src.bot (bot.py:339): Searches Performed: 3
+2024-11-10 15:59:40,644 [INFO] src.bot (bot.py:340): Error Count: 0
+2024-11-10 15:59:40,644 [INFO] src.bot (bot.py:341): ===================
+2024-11-10 16:00:00,441 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: wie steht es aktuell um die ampelregierung?...
+2024-11-10 16:00:00,442 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:00:00,442 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: "wie steht es a...
+2024-11-10 16:00:02,563 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:00:02,563 [INFO] src.bot (bot.py:114): 🔄 Queuing request to Hermes LLM...
+2024-11-10 16:00:02,566 [INFO] src.api_client (api_client.py:172): Making API request with prompt: wie steht es aktuell um die ampelregierung?...
+2024-11-10 16:00:46,734 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:00:46,735 [INFO] src.bot (bot.py:151): ✨ LLM response received successfully
+2024-11-10 16:00:46,735 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 46293.09ms
+2024-11-10 16:00:46,735 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:00:47,959 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.22ms
+2024-11-10 16:00:47,972 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1236.18ms
+2024-11-10 16:00:47,972 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:01:40,982 [INFO] discord.gateway (gateway.py:568): Shard ID None has successfully RESUMED session 761ded442887a9b704a1d5eb630e1897.
+2024-11-10 16:02:50,765 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: what tool are you using for online searches?...
+2024-11-10 16:02:50,765 [INFO] src.bot (bot.py:81): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 16:02:50,766 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Based on this user request: "what too...
+2024-11-10 16:02:53,743 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:02:53,744 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 16:02:53,744 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: query...
+2024-11-10 16:02:53,745 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: Given the user request: "what tool are you using for online searches?", a specific and detailed sear...
+2024-11-10 16:02:53,745 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 16:02:53,745 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 16:02:53,746 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 16:02:53,746 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: query...
+2024-11-10 16:02:53,746 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 16:02:53,747 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 16:02:53,747 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 16:02:53,747 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 16:02:53,948 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 199.69ms
+2024-11-10 16:02:56,426 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , when are you using online searches?...
+2024-11-10 16:02:56,426 [INFO] src.bot (bot.py:81): 🔍 Search keyword detected in prompt, generating search query...
+2024-11-10 16:02:56,426 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Based on this user request: ", when a...
+2024-11-10 16:02:58,271 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:02:58,271 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 16:02:58,272 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: frequency of online searches for 'when to use onli...
+2024-11-10 16:02:58,272 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("frequency of online searches for 'when to use online searches' in daily life, digital literac...
+2024-11-10 16:02:58,272 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 16:02:58,272 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 16:02:58,273 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 16:02:58,273 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: frequency of online searches for 'when to use onli...
+2024-11-10 16:02:58,273 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 16:02:58,273 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 16:02:58,274 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 16:02:58,274 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 16:02:58,476 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 202.39ms
+2024-11-10 16:03:04,509 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 16:03:04,509 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1092 characters
+2024-11-10 16:03:04,510 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 16:03:04,510 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 10762.88ms
+2024-11-10 16:03:04,511 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 16:03:04,511 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 10763.88ms
+2024-11-10 16:03:04,511 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1092 characters
+2024-11-10 16:03:04,511 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 16:03:04,511 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 400
+2024-11-10 16:03:04,512 [INFO] src.bot (bot.py:127): 🔍 Sonar search detected, processing search results...
+2024-11-10 16:03:04,512 [INFO] src.bot (bot.py:142): 🔄 Generating augmented response with search data...
+2024-11-10 16:03:04,514 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "The term "query" can ...
+2024-11-10 16:03:11,804 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 16:03:11,805 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1410 characters
+2024-11-10 16:03:11,805 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 16:03:11,806 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 13532.03ms
+2024-11-10 16:03:11,806 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 16:03:11,806 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 13533.02ms
+2024-11-10 16:03:11,807 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1410 characters
+2024-11-10 16:03:11,807 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 16:03:11,807 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 16:03:11,808 [INFO] src.bot (bot.py:127): 🔍 Sonar search detected, processing search results...
+2024-11-10 16:03:11,808 [INFO] src.bot (bot.py:142): 🔄 Generating augmented response with search data...
+2024-11-10 16:03:11,810 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "The frequency of onli...
+2024-11-10 16:03:58,557 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:03:58,558 [INFO] src.bot (bot.py:145): ✨ Augmented response generated successfully
+2024-11-10 16:03:58,558 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 67792.91ms
+2024-11-10 16:03:58,558 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:03:59,656 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.10ms
+2024-11-10 16:03:59,668 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1110.22ms
+2024-11-10 16:03:59,669 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:04:04,140 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:04:04,140 [INFO] src.bot (bot.py:145): ✨ Augmented response generated successfully
+2024-11-10 16:04:04,140 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:04:05,296 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.15ms
+2024-11-10 16:04:05,308 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1168.36ms
+2024-11-10 16:04:05,309 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:04:11,087 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 16:04:11,089 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 16:04:11,971 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: b1747ad99a0c01efb14521faa1f11578).
+2024-11-10 16:04:14,538 [INFO] src.bot (bot.py:312): === Cleo Bot Initialization ===
+2024-11-10 16:04:14,539 [INFO] src.bot (bot.py:313): Bot User: Cleo#0095
+2024-11-10 16:04:14,539 [INFO] src.bot (bot.py:314): Bot ID: 1227275747454877737
+2024-11-10 16:04:14,539 [INFO] src.bot (bot.py:315): Discord.py Version: 2.4.0
+2024-11-10 16:04:14,540 [INFO] src.bot (bot.py:316): Python Version: 3.12.5
+2024-11-10 16:04:14,540 [INFO] src.bot (bot.py:317): Platform: Windows 10
+2024-11-10 16:04:14,540 [INFO] src.bot (bot.py:318): === Initialization Complete ===
+2024-11-10 16:04:14,543 [INFO] src.bot (bot.py:53): Database initialized successfully
+2024-11-10 16:04:14,684 [INFO] src.bot (bot.py:332): === System Metrics ===
+2024-11-10 16:04:14,684 [INFO] src.bot (bot.py:333): Uptime: 0:00:03.591817
+2024-11-10 16:04:14,684 [INFO] src.bot (bot.py:334): CPU Usage: 6.0%
+2024-11-10 16:04:14,685 [INFO] src.bot (bot.py:335): Memory Usage: 46.7%
+2024-11-10 16:04:14,685 [INFO] src.bot (bot.py:336): Active Threads: 3
+2024-11-10 16:04:14,685 [INFO] src.bot (bot.py:337): Messages Processed: 0
+2024-11-10 16:04:14,686 [INFO] src.bot (bot.py:338): Commands Processed: 0
+2024-11-10 16:04:14,686 [INFO] src.bot (bot.py:339): Searches Performed: 0
+2024-11-10 16:04:14,686 [INFO] src.bot (bot.py:340): Error Count: 0
+2024-11-10 16:04:14,687 [INFO] src.bot (bot.py:341): ===================
+2024-11-10 16:04:24,544 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , what do you know about me?...
+2024-11-10 16:04:24,544 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:04:24,545 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: ", what do you ...
+2024-11-10 16:04:27,810 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:04:27,810 [INFO] src.bot (bot.py:114): 🔄 Queuing request to Hermes LLM...
+2024-11-10 16:04:27,814 [INFO] src.api_client (api_client.py:172): Making API request with prompt: , what do you know about me?...
+2024-11-10 16:04:29,882 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , is now a good time to buy $GOAT?...
+2024-11-10 16:04:29,883 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:04:29,883 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: ", is now a goo...
+2024-11-10 16:04:30,862 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:04:30,863 [INFO] src.thought_chain (thought_chain.py:141): === Sonar Search Operation ===
+2024-11-10 16:04:30,863 [INFO] src.thought_chain (thought_chain.py:142): 🔍 Search Query: current market data for $GOAT...
+2024-11-10 16:04:30,864 [INFO] src.thought_chain (thought_chain.py:143): 📝 Original Response: sonar("current market data for $GOAT")...
+2024-11-10 16:04:30,865 [INFO] src.thought_chain (thought_chain.py:149): === Search Request Details ===
+2024-11-10 16:04:30,865 [INFO] src.thought_chain (thought_chain.py:150): 🌐 Initiating Perplexity API search request...
+2024-11-10 16:04:30,865 [INFO] src.perplexity (perplexity.py:80): === Perplexity Completion Request ===
+2024-11-10 16:04:30,866 [INFO] src.perplexity (perplexity.py:81): 🔍 Prompt: current market data for $GOAT...
+2024-11-10 16:04:30,866 [INFO] src.perplexity (perplexity.py:83): ⚙️ System prompt: You are a helpful search assistant. Provide concis...
+2024-11-10 16:04:30,866 [INFO] src.perplexity (perplexity.py:23): === Perplexity API Request ===
+2024-11-10 16:04:30,867 [INFO] src.perplexity (perplexity.py:24): 🎯 Max tokens: 300
+2024-11-10 16:04:30,867 [INFO] src.perplexity (perplexity.py:25): 🌡️ Temperature: 0.7
+2024-11-10 16:04:31,064 [INFO] src.perplexity (perplexity.py:49): ⏱️ API request took 197.49ms
+2024-11-10 16:04:43,708 [INFO] src.perplexity (perplexity.py:62): === API Response ===
+2024-11-10 16:04:43,709 [INFO] src.perplexity (perplexity.py:63): 📊 Response length: 1057 characters
+2024-11-10 16:04:43,709 [INFO] src.perplexity (perplexity.py:100): === Completion Success ===
+2024-11-10 16:04:43,709 [INFO] src.perplexity (perplexity.py:101): ⏱️ Total completion time: 12842.55ms
+2024-11-10 16:04:43,710 [INFO] src.thought_chain (thought_chain.py:162): === Search Results ===
+2024-11-10 16:04:43,710 [INFO] src.thought_chain (thought_chain.py:163): ⏱️ Search completed in 12844.54ms
+2024-11-10 16:04:43,710 [INFO] src.thought_chain (thought_chain.py:164): 📊 Results length: 1057 characters
+2024-11-10 16:04:43,711 [INFO] src.thought_chain (thought_chain.py:169): === Response Processing ===
+2024-11-10 16:04:43,711 [INFO] src.thought_chain (thought_chain.py:170): 🧹 Cleaned response length: 0
+2024-11-10 16:04:43,711 [INFO] src.bot (bot.py:127): 🔍 Sonar search detected, processing search results...
+2024-11-10 16:04:43,712 [INFO] src.bot (bot.py:142): 🔄 Generating augmented response with search data...
+2024-11-10 16:04:43,715 [INFO] src.api_client (api_client.py:172): Making API request with prompt: 
+Based on this search data: "The term "$GOAT" does...
+2024-11-10 16:05:03,931 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:05:03,932 [INFO] src.bot (bot.py:151): ✨ LLM response received successfully
+2024-11-10 16:05:03,932 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 39387.73ms
+2024-11-10 16:05:03,932 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:05:05,121 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.19ms
+2024-11-10 16:05:05,133 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1201.49ms
+2024-11-10 16:05:05,133 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:05:06,356 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , the man tests the scales until he is hit by judg...
+2024-11-10 16:05:06,357 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:05:06,357 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: ", the man test...
+2024-11-10 16:05:07,488 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:05:07,488 [INFO] src.bot (bot.py:114): 🔄 Queuing request to Hermes LLM...
+2024-11-10 16:05:07,491 [INFO] src.api_client (api_client.py:172): Making API request with prompt: , the man tests the scales until he is hit by judg...
+2024-11-10 16:05:21,077 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:05:21,078 [INFO] src.bot (bot.py:145): ✨ Augmented response generated successfully
+2024-11-10 16:05:21,078 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:05:22,212 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.13ms
+2024-11-10 16:05:22,217 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1139.56ms
+2024-11-10 16:05:22,218 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:05:37,296 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:05:37,296 [INFO] src.bot (bot.py:151): ✨ LLM response received successfully
+2024-11-10 16:05:37,297 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 30940.17ms
+2024-11-10 16:05:37,297 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:05:38,447 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.15ms
+2024-11-10 16:05:38,461 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1163.39ms
+2024-11-10 16:05:38,461 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:05:39,552 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , what is my ssn?...
+2024-11-10 16:05:39,552 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:05:39,553 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: ", what is my s...
+2024-11-10 16:05:40,361 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:05:40,362 [INFO] src.bot (bot.py:114): 🔄 Queuing request to Hermes LLM...
+2024-11-10 16:05:40,365 [INFO] src.api_client (api_client.py:172): Making API request with prompt: , what is my ssn?...
+2024-11-10 16:06:30,919 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:06:30,919 [INFO] src.bot (bot.py:151): ✨ LLM response received successfully
+2024-11-10 16:06:30,920 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 51367.39ms
+2024-11-10 16:06:30,920 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:06:32,244 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.32ms
+2024-11-10 16:06:32,251 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1330.52ms
+2024-11-10 16:06:32,251 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:06:45,560 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: that sounds amazing! how do i get into goat farmin...
+2024-11-10 16:06:45,560 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:06:45,560 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: "that sounds am...
+2024-11-10 16:06:46,552 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:06:46,552 [INFO] src.bot (bot.py:114): 🔄 Queuing request to Hermes LLM...
+2024-11-10 16:06:46,556 [INFO] src.api_client (api_client.py:172): Making API request with prompt: that sounds amazing! how do i get into goat farmin...
+2024-11-10 16:07:32,953 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:07:32,954 [INFO] src.bot (bot.py:151): ✨ LLM response received successfully
+2024-11-10 16:07:32,954 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 47393.52ms
+2024-11-10 16:07:32,955 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:07:34,280 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.33ms
+2024-11-10 16:07:34,293 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1338.52ms
+2024-11-10 16:07:34,293 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
+2024-11-10 16:09:14,697 [INFO] src.bot (bot.py:332): === System Metrics ===
+2024-11-10 16:09:14,698 [INFO] src.bot (bot.py:333): Uptime: 0:05:03.605745
+2024-11-10 16:09:14,698 [INFO] src.bot (bot.py:334): CPU Usage: 7.6%
+2024-11-10 16:09:14,699 [INFO] src.bot (bot.py:335): Memory Usage: 46.3%
+2024-11-10 16:09:14,699 [INFO] src.bot (bot.py:336): Active Threads: 3
+2024-11-10 16:09:14,699 [INFO] src.bot (bot.py:337): Messages Processed: 0
+2024-11-10 16:09:14,700 [INFO] src.bot (bot.py:338): Commands Processed: 0
+2024-11-10 16:09:14,700 [INFO] src.bot (bot.py:339): Searches Performed: 1
+2024-11-10 16:09:14,700 [INFO] src.bot (bot.py:340): Error Count: 0
+2024-11-10 16:09:14,701 [INFO] src.bot (bot.py:341): ===================
+2024-11-10 16:09:20,199 [INFO] src.bot (bot.py:374):  Cleo is processing a response to: , can you please take care of my goat, while i'm o...
+2024-11-10 16:09:20,200 [INFO] src.bot (bot.py:94): 🔄 Analyzing request type...
+2024-11-10 16:09:20,200 [INFO] src.api_client (api_client.py:273): Making analysis request with prompt: 
+            Analyze this request: ", can you plea...
+2024-11-10 16:09:20,959 [INFO] src.api_client (api_client.py:277): Analysis request successful
+2024-11-10 16:09:20,959 [INFO] src.bot (bot.py:114): 🔄 Queuing request to Hermes LLM...
+2024-11-10 16:09:20,962 [INFO] src.api_client (api_client.py:172): Making API request with prompt: , can you please take care of my goat, while i'm o...
+2024-11-10 16:10:03,163 [INFO] src.api_client (api_client.py:184): API request successful
+2024-11-10 16:10:03,164 [INFO] src.bot (bot.py:151): ✨ LLM response received successfully
+2024-11-10 16:10:03,164 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 42964.16ms
+2024-11-10 16:10:03,165 [INFO] src.bot (bot.py:166): 🔄 Starting response processing...
+2024-11-10 16:10:04,397 [INFO] src.bot (bot.py:179): ✨ Response processed and sent in 1.23ms
+2024-11-10 16:10:04,403 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 1238.72ms
+2024-11-10 16:10:04,403 [INFO] src.bot (bot.py:386): ✨ Message sent successfully
