@@ -7,7 +7,7 @@ import logging
 import random
 import asyncio
 from src.config import system_prompt, DISCORD_TOKEN
-from src.api_client import fetch_completion_with_hermes, conversation_cache, ConversationManager
+from src.api_client import fetch_completion_with_hermes as api_fetch_completion, conversation_cache, ConversationManager
 from src.flux import generate_image
 from collections import defaultdict
 from src.thought_chain import ThoughtChainManager
@@ -64,19 +64,17 @@ def adjust_tone(ai_response: str, user_tone: str) -> str:
         ai_response = re.sub(r'[^\w\s,]', '', ai_response)
     return ai_response.strip()
 
-@log_timing("LLM Response Generation")
-async def fetch_completion_with_hermes(prompt: str, channel_id: str, user_id: str, max_tokens: int = 150):
-    start_queue_time = time.perf_counter()
-    logger.info("🔄 Queuing request to Hermes LLM...")
-    
+@log_timing("Hermes LLM Response")
+async def process_llm_response(prompt: str, channel_id: str, user_id: str, max_tokens: int = 150):
+    """Process and time LLM response."""
     try:
-        response = await fetch_completion_with_hermes(prompt, channel_id, user_id, max_tokens)
-        queue_time = (time.perf_counter() - start_queue_time) * 1000
-        logger.info(f"✨ Response received from queue after {queue_time:.2f}ms")
+        logger.info("🔄 Queuing request to Hermes LLM...")
+        response = await api_fetch_completion(prompt, channel_id, user_id, max_tokens)
+        if response:
+            logger.info("✨ LLM response received successfully")
         return response
     except Exception as e:
-        queue_time = (time.perf_counter() - start_queue_time) * 1000
-        logger.error(f"❌ Queue processing failed after {queue_time:.2f}ms: {str(e)}")
+        logger.error(f"Error in LLM processing: {str(e)}")
         raise
 
 @log_timing("Message Processing")
@@ -149,7 +147,7 @@ async def handle_thought_chain(message):
                 break
 
             # Use metaprompting for follow-up thoughts
-            ai_response = await fetch_completion_with_hermes(
+            ai_response = await process_llm_response(
                 follow_up_prompt,
                 str(message.channel.id),
                 str(message.author.id),
@@ -333,7 +331,7 @@ async def on_message(message):
 
                 logger.info("🔄 Generating response with Hermes LLM...")
                 max_tokens = random.randint(100, 250)
-                ai_response = await fetch_completion_with_hermes(
+                ai_response = await process_llm_response(
                     user_prompt,
                     str(message.channel.id),
                     str(message.author.id),
