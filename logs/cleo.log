@@ -8181,3 +8181,455 @@ RecursionError: maximum recursion depth exceeded
 2024-11-10 13:58:46,042 [INFO] src.bot (bot.py:88): 🔄 Starting response processing...
 2024-11-10 13:58:54,539 [INFO] src.bot (bot.py:113): ✨ Response processed and sent in 8.50ms
 2024-11-10 13:58:54,540 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 8497.65ms
+2024-11-10 14:00:16,125 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:00:16,126 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:00:16,702 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: edd89f2249ff749d51fc564272be4089).
+2024-11-10 14:00:19,280 [INFO] src.bot (bot.py:266): === Cleo Bot Initialization ===
+2024-11-10 14:00:19,280 [INFO] src.bot (bot.py:267): Bot User: Cleo#0095
+2024-11-10 14:00:19,281 [INFO] src.bot (bot.py:268): Bot ID: 1227275747454877737
+2024-11-10 14:00:19,281 [INFO] src.bot (bot.py:269): Discord.py Version: 2.4.0
+2024-11-10 14:00:19,281 [INFO] src.bot (bot.py:270): Python Version: 3.12.5
+2024-11-10 14:00:19,282 [INFO] src.bot (bot.py:271): Platform: Windows 10
+2024-11-10 14:00:19,282 [INFO] src.bot (bot.py:272): === Initialization Complete ===
+2024-11-10 14:00:19,284 [INFO] src.bot (bot.py:45): Database initialized successfully
+2024-11-10 14:00:19,286 [ERROR] src.bot (bot.py:236): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 14:00:19,426 [INFO] src.bot (bot.py:286): === System Metrics ===
+2024-11-10 14:00:19,427 [INFO] src.bot (bot.py:287): Uptime: 0:00:03.300322
+2024-11-10 14:00:19,427 [INFO] src.bot (bot.py:288): CPU Usage: 0.0%
+2024-11-10 14:00:19,427 [INFO] src.bot (bot.py:289): Memory Usage: 0.1253096169530782%
+2024-11-10 14:00:19,428 [INFO] src.bot (bot.py:290): Active Threads: 11
+2024-11-10 14:00:19,428 [INFO] src.bot (bot.py:291): Messages Processed: 0
+2024-11-10 14:00:19,428 [INFO] src.bot (bot.py:292): Commands Processed: 0
+2024-11-10 14:00:19,428 [INFO] src.bot (bot.py:293): Error Count: 0
+2024-11-10 14:00:19,429 [INFO] src.bot (bot.py:294): ===================
+2024-11-10 14:00:30,183 [INFO] src.bot (bot.py:309): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:00:30,183 [INFO] src.bot (bot.py:313): 🤔 Cleo is processing a response to: what happened to your tagging? also rivian is dope...
+2024-11-10 14:00:30,200 [INFO] src.bot (bot.py:336): 🔄 Generating response with Hermes LLM...
+2024-11-10 14:00:30,200 [INFO] src.bot (bot.py:71): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:01:01,497 [INFO] src.bot (bot.py:74): ✨ LLM response received successfully
+2024-11-10 14:01:01,497 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 31297.17ms
+2024-11-10 14:01:01,497 [INFO] src.bot (bot.py:346): ✨ Response generated successfully, processing and sending...
+2024-11-10 14:01:01,498 [INFO] src.bot (bot.py:88): 🔄 Starting response processing...
+2024-11-10 14:01:18,425 [INFO] src.bot (bot.py:117): ✨ Response processed and sent in 16.93ms
+2024-11-10 14:01:18,425 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 16927.14ms
+2024-11-10 14:01:30,994 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:01:30,996 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:01:31,750 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: edbb164c4cfbadf766b7b14c47fc6a36).
+2024-11-10 14:01:34,315 [INFO] src.bot (bot.py:266): === Cleo Bot Initialization ===
+2024-11-10 14:01:34,315 [INFO] src.bot (bot.py:267): Bot User: Cleo#0095
+2024-11-10 14:01:34,315 [INFO] src.bot (bot.py:268): Bot ID: 1227275747454877737
+2024-11-10 14:01:34,316 [INFO] src.bot (bot.py:269): Discord.py Version: 2.4.0
+2024-11-10 14:01:34,316 [INFO] src.bot (bot.py:270): Python Version: 3.12.5
+2024-11-10 14:01:34,316 [INFO] src.bot (bot.py:271): Platform: Windows 10
+2024-11-10 14:01:34,316 [INFO] src.bot (bot.py:272): === Initialization Complete ===
+2024-11-10 14:01:34,318 [INFO] src.bot (bot.py:45): Database initialized successfully
+2024-11-10 14:01:34,319 [ERROR] src.bot (bot.py:236): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 14:01:34,435 [INFO] src.bot (bot.py:286): === System Metrics ===
+2024-11-10 14:01:34,436 [INFO] src.bot (bot.py:287): Uptime: 0:00:03.440112
+2024-11-10 14:01:34,436 [INFO] src.bot (bot.py:288): CPU Usage: 0.0%
+2024-11-10 14:01:34,436 [INFO] src.bot (bot.py:289): Memory Usage: 0.12556471637050287%
+2024-11-10 14:01:34,437 [INFO] src.bot (bot.py:290): Active Threads: 11
+2024-11-10 14:01:34,437 [INFO] src.bot (bot.py:291): Messages Processed: 0
+2024-11-10 14:01:34,437 [INFO] src.bot (bot.py:292): Commands Processed: 0
+2024-11-10 14:01:34,438 [INFO] src.bot (bot.py:293): Error Count: 0
+2024-11-10 14:01:34,438 [INFO] src.bot (bot.py:294): ===================
+2024-11-10 14:01:40,392 [ERROR] src.bot (bot.py:335): Error processing message: name 'should_respond_to_message' is not defined
+Traceback (most recent call last):
+  File "G:\LangChain-Discord-Bot\src\bot.py", line 313, in on_message
+    if should_respond_to_message(message):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'should_respond_to_message' is not defined
+2024-11-10 14:02:20,277 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:02:20,279 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:02:20,892 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 01b68ad72818f40cda92e76e57156dc6).
+2024-11-10 14:02:23,455 [INFO] src.bot (bot.py:266): === Cleo Bot Initialization ===
+2024-11-10 14:02:23,455 [INFO] src.bot (bot.py:267): Bot User: Cleo#0095
+2024-11-10 14:02:23,456 [INFO] src.bot (bot.py:268): Bot ID: 1227275747454877737
+2024-11-10 14:02:23,456 [INFO] src.bot (bot.py:269): Discord.py Version: 2.4.0
+2024-11-10 14:02:23,456 [INFO] src.bot (bot.py:270): Python Version: 3.12.5
+2024-11-10 14:02:23,457 [INFO] src.bot (bot.py:271): Platform: Windows 10
+2024-11-10 14:02:23,457 [INFO] src.bot (bot.py:272): === Initialization Complete ===
+2024-11-10 14:02:23,459 [INFO] src.bot (bot.py:45): Database initialized successfully
+2024-11-10 14:02:23,461 [ERROR] src.bot (bot.py:236): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 14:02:23,627 [INFO] src.bot (bot.py:286): === System Metrics ===
+2024-11-10 14:02:23,628 [INFO] src.bot (bot.py:287): Uptime: 0:00:03.348525
+2024-11-10 14:02:23,628 [INFO] src.bot (bot.py:288): CPU Usage: 0.0%
+2024-11-10 14:02:23,628 [INFO] src.bot (bot.py:289): Memory Usage: 0.12503857382206449%
+2024-11-10 14:02:23,629 [INFO] src.bot (bot.py:290): Active Threads: 11
+2024-11-10 14:02:23,629 [INFO] src.bot (bot.py:291): Messages Processed: 0
+2024-11-10 14:02:23,629 [INFO] src.bot (bot.py:292): Commands Processed: 0
+2024-11-10 14:02:23,630 [INFO] src.bot (bot.py:293): Error Count: 0
+2024-11-10 14:02:23,630 [INFO] src.bot (bot.py:294): ===================
+2024-11-10 14:02:29,266 [ERROR] src.bot (bot.py:335): Error processing message: 'BotMetrics' object has no attribute 'messages_processed'
+Traceback (most recent call last):
+  File "G:\LangChain-Discord-Bot\src\bot.py", line 314, in on_message
+    metrics.messages_processed += 1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BotMetrics' object has no attribute 'messages_processed'
+2024-11-10 14:03:03,463 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:03:03,464 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:03:04,343 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 600e862c7a255cfc4c6788e2d9395348).
+2024-11-10 14:03:06,904 [INFO] src.bot (bot.py:245): === Cleo Bot Initialization ===
+2024-11-10 14:03:06,905 [INFO] src.bot (bot.py:246): Bot User: Cleo#0095
+2024-11-10 14:03:06,905 [INFO] src.bot (bot.py:247): Bot ID: 1227275747454877737
+2024-11-10 14:03:06,905 [INFO] src.bot (bot.py:248): Discord.py Version: 2.4.0
+2024-11-10 14:03:06,905 [INFO] src.bot (bot.py:249): Python Version: 3.12.5
+2024-11-10 14:03:06,905 [INFO] src.bot (bot.py:250): Platform: Windows 10
+2024-11-10 14:03:06,905 [INFO] src.bot (bot.py:251): === Initialization Complete ===
+2024-11-10 14:03:06,907 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:03:06,909 [ERROR] src.bot (bot.py:237): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 14:03:07,089 [INFO] src.bot (bot.py:265): === System Metrics ===
+2024-11-10 14:03:07,090 [INFO] src.bot (bot.py:266): Uptime: 0:00:03.577715
+2024-11-10 14:03:07,090 [INFO] src.bot (bot.py:267): CPU Usage: 16.0%
+2024-11-10 14:03:07,091 [INFO] src.bot (bot.py:268): Memory Usage: 0.12523787024192753%
+2024-11-10 14:03:07,091 [INFO] src.bot (bot.py:269): Active Threads: 11
+2024-11-10 14:03:07,091 [INFO] src.bot (bot.py:270): Messages Processed: 0
+2024-11-10 14:03:07,092 [INFO] src.bot (bot.py:271): Commands Processed: 0
+2024-11-10 14:03:07,092 [INFO] src.bot (bot.py:272): Error Count: 0
+2024-11-10 14:03:07,092 [INFO] src.bot (bot.py:273): ===================
+2024-11-10 14:03:09,415 [INFO] src.bot (bot.py:294): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:03:09,557 [ERROR] src.bot (bot.py:314): Error processing message: name 'process_message_content' is not defined
+Traceback (most recent call last):
+  File "G:\LangChain-Discord-Bot\src\bot.py", line 298, in on_message
+    user_prompt = process_message_content(message.content)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'process_message_content' is not defined
+2024-11-10 14:03:57,450 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:03:57,451 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:03:59,268 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: a5a91052e4fed4c19e5ecdf6fce13f85).
+2024-11-10 14:04:02,134 [INFO] src.bot (bot.py:245): === Cleo Bot Initialization ===
+2024-11-10 14:04:02,135 [INFO] src.bot (bot.py:246): Bot User: Cleo#0095
+2024-11-10 14:04:02,135 [INFO] src.bot (bot.py:247): Bot ID: 1227275747454877737
+2024-11-10 14:04:02,135 [INFO] src.bot (bot.py:248): Discord.py Version: 2.4.0
+2024-11-10 14:04:02,136 [INFO] src.bot (bot.py:249): Python Version: 3.12.5
+2024-11-10 14:04:02,136 [INFO] src.bot (bot.py:250): Platform: Windows 10
+2024-11-10 14:04:02,136 [INFO] src.bot (bot.py:251): === Initialization Complete ===
+2024-11-10 14:04:02,138 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:04:02,140 [ERROR] src.bot (bot.py:237): Failed to load image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 14:04:02,364 [INFO] src.bot (bot.py:265): === System Metrics ===
+2024-11-10 14:04:02,364 [INFO] src.bot (bot.py:266): Uptime: 0:00:04.864711
+2024-11-10 14:04:02,365 [INFO] src.bot (bot.py:267): CPU Usage: 11.5%
+2024-11-10 14:04:02,365 [INFO] src.bot (bot.py:268): Memory Usage: 0.12529367323948917%
+2024-11-10 14:04:02,365 [INFO] src.bot (bot.py:269): Active Threads: 11
+2024-11-10 14:04:02,366 [INFO] src.bot (bot.py:270): Messages Processed: 0
+2024-11-10 14:04:02,366 [INFO] src.bot (bot.py:271): Commands Processed: 0
+2024-11-10 14:04:02,366 [INFO] src.bot (bot.py:272): Error Count: 0
+2024-11-10 14:04:02,366 [INFO] src.bot (bot.py:273): ===================
+2024-11-10 14:04:02,753 [INFO] src.bot (bot.py:293): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:04:02,753 [INFO] src.bot (bot.py:296): 🤔 Cleo is processing a response to: hmm say more...
+2024-11-10 14:04:02,884 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:04:02,885 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 0.48ms
+2024-11-10 14:05:16,211 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:05:16,213 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:05:16,838 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 5505fab434ce5e51e91732a4b1bf19c3).
+2024-11-10 14:05:19,401 [INFO] src.bot (bot.py:263): === Cleo Bot Initialization ===
+2024-11-10 14:05:19,402 [INFO] src.bot (bot.py:264): Bot User: Cleo#0095
+2024-11-10 14:05:19,402 [INFO] src.bot (bot.py:265): Bot ID: 1227275747454877737
+2024-11-10 14:05:19,402 [INFO] src.bot (bot.py:266): Discord.py Version: 2.4.0
+2024-11-10 14:05:19,403 [INFO] src.bot (bot.py:267): Python Version: 3.12.5
+2024-11-10 14:05:19,403 [INFO] src.bot (bot.py:268): Platform: Windows 10
+2024-11-10 14:05:19,403 [INFO] src.bot (bot.py:269): === Initialization Complete ===
+2024-11-10 14:05:19,405 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:05:19,406 [ERROR] src.bot (bot.py:252): Failed to load src.cogs.image_cog: Extension 'src.cogs.image_cog' raised an error: CommandAlreadyRegistered: Command 'create' already registered.
+2024-11-10 14:05:19,573 [INFO] src.bot (bot.py:283): === System Metrics ===
+2024-11-10 14:05:19,573 [INFO] src.bot (bot.py:284): Uptime: 0:00:03.314848
+2024-11-10 14:05:19,574 [INFO] src.bot (bot.py:285): CPU Usage: 9.0%
+2024-11-10 14:05:19,574 [INFO] src.bot (bot.py:286): Memory Usage: 0.12461606541195487%
+2024-11-10 14:05:19,574 [INFO] src.bot (bot.py:287): Active Threads: 11
+2024-11-10 14:05:19,575 [INFO] src.bot (bot.py:288): Messages Processed: 0
+2024-11-10 14:05:19,575 [INFO] src.bot (bot.py:289): Commands Processed: 0
+2024-11-10 14:05:19,576 [INFO] src.bot (bot.py:290): Error Count: 0
+2024-11-10 14:05:19,576 [INFO] src.bot (bot.py:291): ===================
+2024-11-10 14:05:57,089 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:05:57,090 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:05:57,841 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 91720a4b04b51abf4c63b272dad5395d).
+2024-11-10 14:06:00,397 [INFO] src.bot (bot.py:259): === Cleo Bot Initialization ===
+2024-11-10 14:06:00,398 [INFO] src.bot (bot.py:260): Bot User: Cleo#0095
+2024-11-10 14:06:00,398 [INFO] src.bot (bot.py:261): Bot ID: 1227275747454877737
+2024-11-10 14:06:00,398 [INFO] src.bot (bot.py:262): Discord.py Version: 2.4.0
+2024-11-10 14:06:00,399 [INFO] src.bot (bot.py:263): Python Version: 3.12.5
+2024-11-10 14:06:00,399 [INFO] src.bot (bot.py:264): Platform: Windows 10
+2024-11-10 14:06:00,399 [INFO] src.bot (bot.py:265): === Initialization Complete ===
+2024-11-10 14:06:00,401 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:06:00,726 [INFO] src.bot (bot.py:279): === System Metrics ===
+2024-11-10 14:06:00,726 [INFO] src.bot (bot.py:280): Uptime: 0:00:03.589304
+2024-11-10 14:06:00,726 [INFO] src.bot (bot.py:281): CPU Usage: 11.2%
+2024-11-10 14:06:00,727 [INFO] src.bot (bot.py:282): Memory Usage: 0.12397831686839318%
+2024-11-10 14:06:00,727 [INFO] src.bot (bot.py:283): Active Threads: 11
+2024-11-10 14:06:00,727 [INFO] src.bot (bot.py:284): Messages Processed: 0
+2024-11-10 14:06:00,728 [INFO] src.bot (bot.py:285): Commands Processed: 0
+2024-11-10 14:06:00,728 [INFO] src.bot (bot.py:286): Error Count: 0
+2024-11-10 14:06:00,728 [INFO] src.bot (bot.py:287): ===================
+2024-11-10 14:06:09,362 [INFO] src.bot (bot.py:306): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:06:09,362 [INFO] src.bot (bot.py:309): 🤔 Cleo is processing a response to: ?...
+2024-11-10 14:06:09,482 [INFO] src.bot (bot.py:76): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:06:09,483 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 0.45ms
+2024-11-10 14:07:20,869 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:07:20,871 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:07:21,486 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: f916e067eb24d95695f50ed290408acb).
+2024-11-10 14:07:24,049 [INFO] src.bot (bot.py:257): === Cleo Bot Initialization ===
+2024-11-10 14:07:24,049 [INFO] src.bot (bot.py:258): Bot User: Cleo#0095
+2024-11-10 14:07:24,049 [INFO] src.bot (bot.py:259): Bot ID: 1227275747454877737
+2024-11-10 14:07:24,050 [INFO] src.bot (bot.py:260): Discord.py Version: 2.4.0
+2024-11-10 14:07:24,050 [INFO] src.bot (bot.py:261): Python Version: 3.12.5
+2024-11-10 14:07:24,050 [INFO] src.bot (bot.py:262): Platform: Windows 10
+2024-11-10 14:07:24,051 [INFO] src.bot (bot.py:263): === Initialization Complete ===
+2024-11-10 14:07:24,053 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:07:24,196 [INFO] src.bot (bot.py:277): === System Metrics ===
+2024-11-10 14:07:24,196 [INFO] src.bot (bot.py:278): Uptime: 0:00:03.277838
+2024-11-10 14:07:24,197 [INFO] src.bot (bot.py:279): CPU Usage: 9.0%
+2024-11-10 14:07:24,197 [INFO] src.bot (bot.py:280): Memory Usage: 0.12279848206280404%
+2024-11-10 14:07:24,198 [INFO] src.bot (bot.py:281): Active Threads: 11
+2024-11-10 14:07:24,198 [INFO] src.bot (bot.py:282): Messages Processed: 0
+2024-11-10 14:07:24,198 [INFO] src.bot (bot.py:283): Commands Processed: 0
+2024-11-10 14:07:24,198 [INFO] src.bot (bot.py:284): Error Count: 0
+2024-11-10 14:07:24,199 [INFO] src.bot (bot.py:285): ===================
+2024-11-10 14:07:28,148 [INFO] src.bot (bot.py:304): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:07:28,148 [INFO] src.bot (bot.py:307): 🤔 Cleo is processing a response to: ?...
+2024-11-10 14:07:28,257 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:07:28,257 [ERROR] src.bot (bot.py:79): Empty response from LLM
+2024-11-10 14:07:28,258 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 0.81ms
+2024-11-10 14:07:28,258 [ERROR] src.bot (bot.py:324): Failed to generate response
+2024-11-10 14:08:04,486 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:08:04,487 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:08:05,252 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: f51e2a9f8c12f8bed7ddd781e645e170).
+2024-11-10 14:08:07,809 [INFO] src.bot (bot.py:261): === Cleo Bot Initialization ===
+2024-11-10 14:08:07,809 [INFO] src.bot (bot.py:262): Bot User: Cleo#0095
+2024-11-10 14:08:07,810 [INFO] src.bot (bot.py:263): Bot ID: 1227275747454877737
+2024-11-10 14:08:07,810 [INFO] src.bot (bot.py:264): Discord.py Version: 2.4.0
+2024-11-10 14:08:07,810 [INFO] src.bot (bot.py:265): Python Version: 3.12.5
+2024-11-10 14:08:07,811 [INFO] src.bot (bot.py:266): Platform: Windows 10
+2024-11-10 14:08:07,811 [INFO] src.bot (bot.py:267): === Initialization Complete ===
+2024-11-10 14:08:07,812 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:08:07,988 [INFO] src.bot (bot.py:281): === System Metrics ===
+2024-11-10 14:08:07,988 [INFO] src.bot (bot.py:282): Uptime: 0:00:03.454113
+2024-11-10 14:08:07,988 [INFO] src.bot (bot.py:283): CPU Usage: 15.1%
+2024-11-10 14:08:07,989 [INFO] src.bot (bot.py:284): Memory Usage: 0.1251900391011604%
+2024-11-10 14:08:07,989 [INFO] src.bot (bot.py:285): Active Threads: 11
+2024-11-10 14:08:07,989 [INFO] src.bot (bot.py:286): Messages Processed: 0
+2024-11-10 14:08:07,990 [INFO] src.bot (bot.py:287): Commands Processed: 0
+2024-11-10 14:08:07,990 [INFO] src.bot (bot.py:288): Error Count: 0
+2024-11-10 14:08:07,990 [INFO] src.bot (bot.py:289): ===================
+2024-11-10 14:08:11,801 [INFO] src.bot (bot.py:305): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:08:11,932 [INFO] src.bot (bot.py:310): 🤔 Cleo is processing a response to: ..-...
+2024-11-10 14:08:11,933 [INFO] src.bot (bot.py:76): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:08:11,933 [ERROR] src.bot (bot.py:80): Empty response from LLM
+2024-11-10 14:08:11,933 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 0.67ms
+2024-11-10 14:08:12,280 [INFO] src.bot (bot.py:323): ✨ Message sent successfully
+2024-11-10 14:09:36,607 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:09:36,608 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:09:37,176 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: dc3a187845f262d227368d0551c78bd2).
+2024-11-10 14:09:39,726 [INFO] src.bot (bot.py:257): === Cleo Bot Initialization ===
+2024-11-10 14:09:39,726 [INFO] src.bot (bot.py:258): Bot User: Cleo#0095
+2024-11-10 14:09:39,726 [INFO] src.bot (bot.py:259): Bot ID: 1227275747454877737
+2024-11-10 14:09:39,727 [INFO] src.bot (bot.py:260): Discord.py Version: 2.4.0
+2024-11-10 14:09:39,727 [INFO] src.bot (bot.py:261): Python Version: 3.12.5
+2024-11-10 14:09:39,727 [INFO] src.bot (bot.py:262): Platform: Windows 10
+2024-11-10 14:09:39,728 [INFO] src.bot (bot.py:263): === Initialization Complete ===
+2024-11-10 14:09:39,730 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:09:39,919 [INFO] src.bot (bot.py:277): === System Metrics ===
+2024-11-10 14:09:39,920 [INFO] src.bot (bot.py:278): Uptime: 0:00:03.263634
+2024-11-10 14:09:39,920 [INFO] src.bot (bot.py:279): CPU Usage: 14.8%
+2024-11-10 14:09:39,921 [INFO] src.bot (bot.py:280): Memory Usage: 0.12459214984157131%
+2024-11-10 14:09:39,921 [INFO] src.bot (bot.py:281): Active Threads: 11
+2024-11-10 14:09:39,921 [INFO] src.bot (bot.py:282): Messages Processed: 0
+2024-11-10 14:09:39,922 [INFO] src.bot (bot.py:283): Commands Processed: 0
+2024-11-10 14:09:39,922 [INFO] src.bot (bot.py:284): Error Count: 0
+2024-11-10 14:09:39,922 [INFO] src.bot (bot.py:285): ===================
+2024-11-10 14:09:44,949 [INFO] src.bot (bot.py:301): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:09:45,091 [INFO] src.bot (bot.py:306): 🤔 Cleo is processing a response to: how about now?...
+2024-11-10 14:09:45,092 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:09:45,092 [ERROR] src.bot (bot.py:76): Empty response from LLM
+2024-11-10 14:09:45,092 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 0.72ms
+2024-11-10 14:09:45,383 [INFO] src.bot (bot.py:319): ✨ Message sent successfully
+2024-11-10 14:10:36,075 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:10:36,077 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:10:36,685 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: c3de409f270ae1ee44ec006db4cc152c).
+2024-11-10 14:10:39,542 [INFO] src.bot (bot.py:257): === Cleo Bot Initialization ===
+2024-11-10 14:10:39,543 [INFO] src.bot (bot.py:258): Bot User: Cleo#0095
+2024-11-10 14:10:39,543 [INFO] src.bot (bot.py:259): Bot ID: 1227275747454877737
+2024-11-10 14:10:39,543 [INFO] src.bot (bot.py:260): Discord.py Version: 2.4.0
+2024-11-10 14:10:39,544 [INFO] src.bot (bot.py:261): Python Version: 3.12.5
+2024-11-10 14:10:39,544 [INFO] src.bot (bot.py:262): Platform: Windows 10
+2024-11-10 14:10:39,544 [INFO] src.bot (bot.py:263): === Initialization Complete ===
+2024-11-10 14:10:39,546 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:10:39,692 [INFO] src.bot (bot.py:277): === System Metrics ===
+2024-11-10 14:10:39,693 [INFO] src.bot (bot.py:278): Uptime: 0:00:03.569185
+2024-11-10 14:10:39,693 [INFO] src.bot (bot.py:279): CPU Usage: 11.4%
+2024-11-10 14:10:39,694 [INFO] src.bot (bot.py:280): Memory Usage: 0.1243290785673521%
+2024-11-10 14:10:39,694 [INFO] src.bot (bot.py:281): Active Threads: 11
+2024-11-10 14:10:39,694 [INFO] src.bot (bot.py:282): Messages Processed: 0
+2024-11-10 14:10:39,695 [INFO] src.bot (bot.py:283): Commands Processed: 0
+2024-11-10 14:10:39,695 [INFO] src.bot (bot.py:284): Error Count: 0
+2024-11-10 14:10:39,695 [INFO] src.bot (bot.py:285): ===================
+2024-11-10 14:10:42,292 [INFO] src.bot (bot.py:301): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:10:42,387 [INFO] src.bot (bot.py:306): 🤔 Cleo is processing a response to: hmm ok...
+2024-11-10 14:10:42,387 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:10:42,391 [INFO] src.api_client (api_client.py:167): Making API request with prompt: hmm ok...
+2024-11-10 14:11:03,125 [INFO] src.api_client (api_client.py:179): API request successful
+2024-11-10 14:11:03,126 [INFO] src.bot (bot.py:79): ✨ LLM response received successfully
+2024-11-10 14:11:03,126 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 20738.73ms
+2024-11-10 14:11:03,329 [INFO] src.bot (bot.py:319): ✨ Message sent successfully
+2024-11-10 14:13:03,857 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:13:03,858 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:13:04,497 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: e20b61e94446a3dc1ce9e6671b2618ac).
+2024-11-10 14:13:07,082 [INFO] src.bot (bot.py:272): === Cleo Bot Initialization ===
+2024-11-10 14:13:07,082 [INFO] src.bot (bot.py:273): Bot User: Cleo#0095
+2024-11-10 14:13:07,083 [INFO] src.bot (bot.py:274): Bot ID: 1227275747454877737
+2024-11-10 14:13:07,083 [INFO] src.bot (bot.py:275): Discord.py Version: 2.4.0
+2024-11-10 14:13:07,083 [INFO] src.bot (bot.py:276): Python Version: 3.12.5
+2024-11-10 14:13:07,084 [INFO] src.bot (bot.py:277): Platform: Windows 10
+2024-11-10 14:13:07,084 [INFO] src.bot (bot.py:278): === Initialization Complete ===
+2024-11-10 14:13:07,086 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:13:07,250 [INFO] src.bot (bot.py:292): === System Metrics ===
+2024-11-10 14:13:07,251 [INFO] src.bot (bot.py:293): Uptime: 0:00:03.344756
+2024-11-10 14:13:07,251 [INFO] src.bot (bot.py:294): CPU Usage: 18.3%
+2024-11-10 14:13:07,252 [INFO] src.bot (bot.py:295): Memory Usage: 0.12494291154053024%
+2024-11-10 14:13:07,252 [INFO] src.bot (bot.py:296): Active Threads: 11
+2024-11-10 14:13:07,252 [INFO] src.bot (bot.py:297): Messages Processed: 0
+2024-11-10 14:13:07,253 [INFO] src.bot (bot.py:298): Commands Processed: 0
+2024-11-10 14:13:07,253 [INFO] src.bot (bot.py:299): Error Count: 0
+2024-11-10 14:13:07,253 [INFO] src.bot (bot.py:300): ===================
+2024-11-10 14:13:09,148 [INFO] src.bot (bot.py:316): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:13:09,268 [INFO] src.bot (bot.py:321): 🤔 Cleo is processing a response to: say more pls...
+2024-11-10 14:13:09,268 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:13:09,271 [INFO] src.api_client (api_client.py:167): Making API request with prompt: say more pls...
+2024-11-10 14:13:21,367 [INFO] src.api_client (api_client.py:179): API request successful
+2024-11-10 14:13:21,367 [INFO] src.bot (bot.py:79): ✨ LLM response received successfully
+2024-11-10 14:13:21,367 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 12099.32ms
+2024-11-10 14:13:21,559 [INFO] src.bot (bot.py:334): ✨ Message sent successfully
+2024-11-10 14:14:27,032 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:14:27,033 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:14:27,770 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 98dd893f310f98a8b341125dff9ae41f).
+2024-11-10 14:14:30,341 [INFO] src.bot (bot.py:287): === Cleo Bot Initialization ===
+2024-11-10 14:14:30,341 [INFO] src.bot (bot.py:288): Bot User: Cleo#0095
+2024-11-10 14:14:30,341 [INFO] src.bot (bot.py:289): Bot ID: 1227275747454877737
+2024-11-10 14:14:30,342 [INFO] src.bot (bot.py:290): Discord.py Version: 2.4.0
+2024-11-10 14:14:30,342 [INFO] src.bot (bot.py:291): Python Version: 3.12.5
+2024-11-10 14:14:30,342 [INFO] src.bot (bot.py:292): Platform: Windows 10
+2024-11-10 14:14:30,343 [INFO] src.bot (bot.py:293): === Initialization Complete ===
+2024-11-10 14:14:30,345 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:14:30,545 [INFO] src.bot (bot.py:307): === System Metrics ===
+2024-11-10 14:14:30,546 [INFO] src.bot (bot.py:308): Uptime: 0:00:03.466683
+2024-11-10 14:14:30,546 [INFO] src.bot (bot.py:309): CPU Usage: 11.1%
+2024-11-10 14:14:30,547 [INFO] src.bot (bot.py:310): Memory Usage: 0.12513423610359875%
+2024-11-10 14:14:30,547 [INFO] src.bot (bot.py:311): Active Threads: 11
+2024-11-10 14:14:30,547 [INFO] src.bot (bot.py:312): Messages Processed: 0
+2024-11-10 14:14:30,548 [INFO] src.bot (bot.py:313): Commands Processed: 0
+2024-11-10 14:14:30,548 [INFO] src.bot (bot.py:314): Error Count: 0
+2024-11-10 14:14:30,548 [INFO] src.bot (bot.py:315): ===================
+2024-11-10 14:14:31,657 [INFO] src.bot (bot.py:331): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:14:31,763 [INFO] src.bot (bot.py:336): 🤔 Cleo is processing a response to: ....
+2024-11-10 14:14:31,763 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:14:31,767 [INFO] src.api_client (api_client.py:167): Making API request with prompt: ....
+2024-11-10 14:14:49,278 [INFO] src.api_client (api_client.py:179): API request successful
+2024-11-10 14:14:49,279 [INFO] src.bot (bot.py:79): ✨ LLM response received successfully
+2024-11-10 14:14:49,279 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 17515.88ms
+2024-11-10 14:14:49,515 [INFO] src.bot (bot.py:349): ✨ Message sent successfully
+2024-11-10 14:15:42,287 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:15:42,289 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:15:42,847 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 839c27a43a2a02548f1a23e89b73d413).
+2024-11-10 14:15:45,403 [INFO] src.bot (bot.py:261): === Cleo Bot Initialization ===
+2024-11-10 14:15:45,404 [INFO] src.bot (bot.py:262): Bot User: Cleo#0095
+2024-11-10 14:15:45,404 [INFO] src.bot (bot.py:263): Bot ID: 1227275747454877737
+2024-11-10 14:15:45,404 [INFO] src.bot (bot.py:264): Discord.py Version: 2.4.0
+2024-11-10 14:15:45,405 [INFO] src.bot (bot.py:265): Python Version: 3.12.5
+2024-11-10 14:15:45,405 [INFO] src.bot (bot.py:266): Platform: Windows 10
+2024-11-10 14:15:45,405 [INFO] src.bot (bot.py:267): === Initialization Complete ===
+2024-11-10 14:15:45,407 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:15:45,608 [INFO] src.bot (bot.py:281): === System Metrics ===
+2024-11-10 14:15:45,609 [INFO] src.bot (bot.py:282): Uptime: 0:00:03.267178
+2024-11-10 14:15:45,609 [INFO] src.bot (bot.py:283): CPU Usage: 16.5%
+2024-11-10 14:15:45,610 [INFO] src.bot (bot.py:284): Memory Usage: 0.12468781212310556%
+2024-11-10 14:15:45,610 [INFO] src.bot (bot.py:285): Active Threads: 11
+2024-11-10 14:15:45,611 [INFO] src.bot (bot.py:286): Messages Processed: 0
+2024-11-10 14:15:45,611 [INFO] src.bot (bot.py:287): Commands Processed: 0
+2024-11-10 14:15:45,611 [INFO] src.bot (bot.py:288): Error Count: 0
+2024-11-10 14:15:45,612 [INFO] src.bot (bot.py:289): ===================
+2024-11-10 14:15:49,414 [INFO] src.bot (bot.py:305): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:15:49,524 [INFO] src.bot (bot.py:310): 🤔 Cleo is processing a response to: hmm...
+2024-11-10 14:15:49,524 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:15:49,527 [INFO] src.api_client (api_client.py:167): Making API request with prompt: hmm...
+2024-11-10 14:16:02,459 [INFO] src.api_client (api_client.py:179): API request successful
+2024-11-10 14:16:02,459 [INFO] src.bot (bot.py:79): ✨ LLM response received successfully
+2024-11-10 14:16:02,460 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 12935.44ms
+2024-11-10 14:16:02,700 [INFO] src.bot (bot.py:323): ✨ Message sent successfully
+2024-11-10 14:17:22,504 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:17:22,505 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:17:23,185 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 41054f11e0bf62e168d9370db28500a5).
+2024-11-10 14:17:25,749 [INFO] src.bot (bot.py:241): === Cleo Bot Initialization ===
+2024-11-10 14:17:25,749 [INFO] src.bot (bot.py:242): Bot User: Cleo#0095
+2024-11-10 14:17:25,749 [INFO] src.bot (bot.py:243): Bot ID: 1227275747454877737
+2024-11-10 14:17:25,749 [INFO] src.bot (bot.py:244): Discord.py Version: 2.4.0
+2024-11-10 14:17:25,749 [INFO] src.bot (bot.py:245): Python Version: 3.12.5
+2024-11-10 14:17:25,749 [INFO] src.bot (bot.py:246): Platform: Windows 10
+2024-11-10 14:17:25,750 [INFO] src.bot (bot.py:247): === Initialization Complete ===
+2024-11-10 14:17:25,752 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:17:25,932 [INFO] src.bot (bot.py:261): === System Metrics ===
+2024-11-10 14:17:25,932 [INFO] src.bot (bot.py:262): Uptime: 0:00:03.380325
+2024-11-10 14:17:25,932 [INFO] src.bot (bot.py:263): CPU Usage: 16.3%
+2024-11-10 14:17:25,933 [INFO] src.bot (bot.py:264): Memory Usage: 0.12339637132239313%
+2024-11-10 14:17:25,933 [INFO] src.bot (bot.py:265): Active Threads: 11
+2024-11-10 14:17:25,933 [INFO] src.bot (bot.py:266): Messages Processed: 0
+2024-11-10 14:17:25,934 [INFO] src.bot (bot.py:267): Commands Processed: 0
+2024-11-10 14:17:25,934 [INFO] src.bot (bot.py:268): Error Count: 0
+2024-11-10 14:17:25,934 [INFO] src.bot (bot.py:269): ===================
+2024-11-10 14:17:27,160 [INFO] src.bot (bot.py:285): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:17:27,275 [INFO] src.bot (bot.py:290): 🤔 Cleo is processing a response to: say more...
+2024-11-10 14:17:27,275 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:17:27,278 [INFO] src.api_client (api_client.py:167): Making API request with prompt: say more...
+2024-11-10 14:17:42,397 [INFO] src.api_client (api_client.py:179): API request successful
+2024-11-10 14:17:42,398 [INFO] src.bot (bot.py:80): ✨ LLM response received successfully
+2024-11-10 14:17:42,398 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 15122.39ms
+2024-11-10 14:17:42,567 [INFO] src.bot (bot.py:303): ✨ Message sent successfully
+2024-11-10 14:19:03,057 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:19:03,058 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:19:03,798 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: b63a164c01f1d84011215b42f4bb34ea).
+2024-11-10 14:19:06,360 [INFO] src.bot (bot.py:241): === Cleo Bot Initialization ===
+2024-11-10 14:19:06,361 [INFO] src.bot (bot.py:242): Bot User: Cleo#0095
+2024-11-10 14:19:06,361 [INFO] src.bot (bot.py:243): Bot ID: 1227275747454877737
+2024-11-10 14:19:06,361 [INFO] src.bot (bot.py:244): Discord.py Version: 2.4.0
+2024-11-10 14:19:06,362 [INFO] src.bot (bot.py:245): Python Version: 3.12.5
+2024-11-10 14:19:06,362 [INFO] src.bot (bot.py:246): Platform: Windows 10
+2024-11-10 14:19:06,362 [INFO] src.bot (bot.py:247): === Initialization Complete ===
+2024-11-10 14:19:06,364 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:19:06,597 [INFO] src.bot (bot.py:261): === System Metrics ===
+2024-11-10 14:19:06,597 [INFO] src.bot (bot.py:262): Uptime: 0:00:03.492387
+2024-11-10 14:19:06,598 [INFO] src.bot (bot.py:263): CPU Usage: 10.5%
+2024-11-10 14:19:06,598 [INFO] src.bot (bot.py:264): Memory Usage: 0.12528570138269465%
+2024-11-10 14:19:06,598 [INFO] src.bot (bot.py:265): Active Threads: 11
+2024-11-10 14:19:06,599 [INFO] src.bot (bot.py:266): Messages Processed: 0
+2024-11-10 14:19:06,599 [INFO] src.bot (bot.py:267): Commands Processed: 0
+2024-11-10 14:19:06,599 [INFO] src.bot (bot.py:268): Error Count: 0
+2024-11-10 14:19:06,600 [INFO] src.bot (bot.py:269): ===================
+2024-11-10 14:19:07,584 [INFO] src.bot (bot.py:285): 📨 Message received from rikufps in ⚙ technical support
+2024-11-10 14:19:07,748 [INFO] src.bot (bot.py:290): 🤔 Cleo is processing a response to: ....
+2024-11-10 14:19:07,748 [INFO] src.bot (bot.py:72): 🔄 Queuing request to Hermes LLM...
+2024-11-10 14:19:07,752 [INFO] src.api_client (api_client.py:167): Making API request with prompt: ....
+2024-11-10 14:19:24,862 [INFO] src.api_client (api_client.py:179): API request successful
+2024-11-10 14:19:24,862 [INFO] src.bot (bot.py:80): ✨ LLM response received successfully
+2024-11-10 14:19:24,863 [INFO] timing (timing.py:25): ⏱️ Hermes LLM Response completed in 17113.44ms
+2024-11-10 14:19:24,863 [INFO] src.bot (bot.py:95): 🔄 Starting response processing...
+2024-11-10 14:19:27,812 [INFO] src.bot (bot.py:108): ✨ Response processed and sent in 2.95ms
+2024-11-10 14:19:27,824 [INFO] timing (timing.py:25): ⏱️ Message Processing completed in 2961.69ms
+2024-11-10 14:19:27,825 [INFO] src.bot (bot.py:302): ✨ Message sent successfully
+2024-11-10 14:20:42,665 [WARNING] discord.client (client.py:300): PyNaCl is not installed, voice will NOT be supported
+2024-11-10 14:20:42,666 [INFO] discord.client (client.py:611): logging in using static token
+2024-11-10 14:20:43,406 [INFO] discord.gateway (gateway.py:563): Shard ID None has connected to Gateway (Session ID: 426a04fee95585edfc04b33255c75d30).
+2024-11-10 14:20:45,965 [INFO] src.bot (bot.py:243): === Cleo Bot Initialization ===
+2024-11-10 14:20:45,966 [INFO] src.bot (bot.py:244): Bot User: Cleo#0095
+2024-11-10 14:20:45,966 [INFO] src.bot (bot.py:245): Bot ID: 1227275747454877737
+2024-11-10 14:20:45,967 [INFO] src.bot (bot.py:246): Discord.py Version: 2.4.0
+2024-11-10 14:20:45,967 [INFO] src.bot (bot.py:247): Python Version: 3.12.5
+2024-11-10 14:20:45,967 [INFO] src.bot (bot.py:248): Platform: Windows 10
+2024-11-10 14:20:45,967 [INFO] src.bot (bot.py:249): === Initialization Complete ===
+2024-11-10 14:20:45,971 [INFO] src.bot (bot.py:46): Database initialized successfully
+2024-11-10 14:20:46,138 [INFO] src.bot (bot.py:263): === System Metrics ===
+2024-11-10 14:20:46,138 [INFO] src.bot (bot.py:264): Uptime: 0:00:03.415233
+2024-11-10 14:20:46,139 [INFO] src.bot (bot.py:265): CPU Usage: 11.9%
+2024-11-10 14:20:46,139 [INFO] src.bot (bot.py:266): Memory Usage: 0.12419355700184524%
+2024-11-10 14:20:46,139 [INFO] src.bot (bot.py:267): Active Threads: 11
+2024-11-10 14:20:46,140 [INFO] src.bot (bot.py:268): Messages Processed: 0
+2024-11-10 14:20:46,140 [INFO] src.bot (bot.py:269): Commands Processed: 0
+2024-11-10 14:20:46,140 [INFO] src.bot (bot.py:270): Error Count: 0
+2024-11-10 14:20:46,140 [INFO] src.bot (bot.py:271): ===================

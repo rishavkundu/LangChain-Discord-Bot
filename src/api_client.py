@@ -111,7 +111,9 @@ async def make_api_request(
                 "temperature": temperature,
                 "presence_penalty": presence_penalty,
                 "frequency_penalty": frequency_penalty,
-                "top_p": top_p
+                "top_p": top_p,
+                "stop": ["<|end|>", "\n\n\n"],  # Add stop sequences
+                "stream": False
             }
         ) as response:
             if response.status == 429:
@@ -145,9 +147,11 @@ async def fetch_completion_with_hermes(
         # Acquire rate limit before making the request
         await acquire_rate_limit()
         
-        manager = conversation_cache.get(channel_id)
-        if not manager:
-            return None
+        # Get or create conversation manager
+        async with cache_lock:
+            if channel_id not in conversation_cache:
+                conversation_cache[channel_id] = await ConversationManager.create(channel_id)
+            manager = conversation_cache[channel_id]
 
         context = await manager.get_relevant_context()
         
@@ -162,20 +166,30 @@ async def fetch_completion_with_hermes(
         emotional_params = emotional_state_manager.get_response_parameters(user_id)
 
         async with aiohttp.ClientSession() as session:
-            response = await retry_with_exponential_backoff(
-                lambda: make_api_request(
-                    session, 
-                    messages, 
-                    max_tokens,
-                    temperature=emotional_params["temperature"],
-                    presence_penalty=emotional_params["presence_penalty"],
-                    frequency_penalty=emotional_params["frequency_penalty"],
-                    top_p=emotional_params["top_p"]
-                )
+            logger.info(f"Making API request with prompt: {prompt[:50]}...")
+            response = await make_api_request(
+                session, 
+                messages, 
+                max_tokens,
+                temperature=emotional_params["temperature"],
+                presence_penalty=emotional_params["presence_penalty"],
+                frequency_penalty=emotional_params["frequency_penalty"],
+                top_p=emotional_params["top_p"]
             )
             
-            return response.strip() if response else None
+            if response:
+                logger.info("API request successful")
+                return response.strip()
+            else:
+                logger.error("API request returned empty response")
+                return None
 
+    except RateLimitError as e:
+        logger.error(f"Rate limit exceeded: {str(e)}")
+        return None
+    except APIError as e:
+        logger.error(f"API error: {str(e)}")
+        return None
     except Exception as e:
         logger.error(f"Error in fetch_completion: {str(e)}", exc_info=True)
         return None
