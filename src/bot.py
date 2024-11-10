@@ -7,7 +7,12 @@ import logging
 import random
 import asyncio
 from src.config import system_prompt, DISCORD_TOKEN
-from src.api_client import fetch_completion_with_hermes as api_fetch_completion, conversation_cache, ConversationManager
+from src.api_client import (
+    fetch_completion_with_hermes as api_fetch_completion, 
+    conversation_cache, 
+    ConversationManager,
+    cache_lock
+)
 from src.flux import generate_image
 from collections import defaultdict
 from src.thought_chain import ThoughtChainManager
@@ -284,10 +289,15 @@ async def on_message(message):
         if not should_respond_to_message(message):
             return
             
-        logger.info(f"📨 Message received from {message.author.name} in {message.channel.name}")
+        channel_id = str(message.channel.id)
+        
+        # Initialize conversation cache if it doesn't exist
+        async with cache_lock:  # Import cache_lock from api_client
+            if channel_id not in conversation_cache:
+                conversation_cache[channel_id] = await ConversationManager.create(channel_id)
         
         # Save user message to context
-        await conversation_cache[str(message.channel.id)].add_message({
+        await conversation_cache[channel_id].add_message({
             "role": "user",
             "content": process_message_content(message.content),
             "user_id": str(message.author.id),
